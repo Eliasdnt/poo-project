@@ -19,9 +19,6 @@ O HOTEL CARD é um sistema desenvolvido para gerenciar de forma eficiente os dad
 * **Monitoramento de Consumos:** Controle do consumo de serviços como room service, minibar, etc.
 * **Geração de Relatórios:** Criação de relatórios personalizados para análise dos dados do sistema.
 
-## Arquitetura de Projeto
-
-Cliente-Servidor
 
 **Tecnologias Utilizadas:**
 
@@ -30,15 +27,6 @@ Cliente-Servidor
 * **Banco de dados:** Mysql
 * **Outras tecnologias:** github, figma
 
-## Instalação e Execução
-
-Sistema web
-
-
-
-## Contato
-
-[Insira aqui os seus dados de contato ou o contato do grupo]
 
 ## Figma
 
@@ -46,3 +34,6 @@ Sistema web
 
 ## Modelo Entidade-Relacionamento (MER)
 ![mer](image.png)
+
+
+
