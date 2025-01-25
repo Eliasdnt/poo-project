@@ -33,7 +33,7 @@ O HOTEL CARD é um sistema desenvolvido para gerenciar de forma eficiente os dad
 (https://www.figma.com/design/omu7PuAuTqiEP7uDis9MZK/hotel-card?node-id=0-1&t=nsLzcXCoRz2UegUY-1)
 
 ## Modelo Entidade-Relacionamento (MER)
-![mer](image.png)
+![mer](assets/image.png)
 
 
 
