@@ -1,0 +1,17 @@
+@import "login.css";
+
+
+:root{
+    --bgloginpage:#0D1A3D;
+    --bglogininput:#d9d9d9;
+    --colorletters:#0f0f0f;
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: 0bg;
+    display: block;
+    font-family: "Poppins" , Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+   
+}
