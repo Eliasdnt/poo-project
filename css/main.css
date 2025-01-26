@@ -1,0 +1,78 @@
+.grid-main{
+    background-color: var(--bgmainback);
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: 100vh;
+}
+
+.menu-main-user{
+    background-color: var(--bgmenubar);
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    padding-left: 15px;
+}
+
+.menu-main-user #logotype{
+    width: 225px;
+}
+
+.menu-main-user nav ul{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 70px 70px 70px 70px;
+ 
+}
+.menu-main-user nav ul li a{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+   color:var(--colorletters);
+   text-decoration: none;
+   text-transform: uppercase;
+   font-size: 16px;
+   padding-left: 15px;
+}
+.menu-main-user nav ul li img{
+    width: 40px;
+}
+
+.menu-main-user .user-informs{
+    align-content: flex-end;
+    padding-bottom: 40px;
+
+}
+.menu-main-user .user-informs div{
+    display: flex;
+   justify-content: space-evenly;
+    padding-bottom:10px ;
+
+}
+
+.menu-main-user .user-informs .grid-user-informs{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+}
+
+.menu-main-user .user-informs .grid-user-informs h4{
+    font-size: 25px;
+    font-weight: 450;
+   }
+.menu-main-user .user-informs .grid-user-informs span{
+ font-size: 12px;
+ font-weight: 100;
+}
+
+
+.menu-main-user .user-informs #user{
+    width: 35px;
+    height: 35px;
+    background-color: var(--bgmainback);
+    border-radius: 100%;
+}
+
+.menu-main-user h6{
+    font-size: 10px;
+    font-weight: 100;
+    text-align: center;
+}
