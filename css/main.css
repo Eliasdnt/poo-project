@@ -1,9 +1,14 @@
+/* main page grid layout */
+
 .grid-main{
     background-color: var(--bgmainback);
     display: grid;
     grid-template-columns: 250px 1fr;
     height: 100vh;
 }
+
+
+/* menu bar styles */
 
 .menu-main-user{
     background-color: var(--bgmenubar);
@@ -76,3 +81,5 @@
     font-weight: 100;
     text-align: center;
 }
+
+/* infor main user styles */

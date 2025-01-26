@@ -1,3 +1,5 @@
+/* page layout grid */
+
 #login{
     max-width: 100%;
     height: 100vh;
@@ -8,16 +10,17 @@
     grid-template-columns: 1fr 1fr;
     justify-items: center;
 }
-
-#login  #rigth-side{
+/* left side part */
+#login  #left-side{
     align-content: center;
 }
 
-#login #rigth-side img{
+#login #left-side img{
     width: 300px;
 }
+/* rigth side part */
 
-#left-side{
+#rigth-side{
     background-color: var(--bgloginpage);
     align-content: center;
     width: 100%;
@@ -27,11 +30,12 @@
     gap: 15px;
 }
 
-#left-side h2{
+#rigth-side h2{
     color: #fff;
 }
 
-#left-side form{
+/* rigth side form */
+#rigth-side form{
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
@@ -39,7 +43,7 @@
 
   
 }
-#left-side span, a{
+#rigth-side span, a{
     color: #fff;
     padding-top: 10px;
     font-size: 9px;
@@ -47,12 +51,12 @@
 }
 
 
+/* rigth side input and labels */
 
-
-#left-side input{
+#rigth-side input{
     background-color: var(--bglogininput);
     /* padding-right: 100px;
-    padding-left: 10px; */
+    padding-rigth: 10px; */
     padding: 7px 100px 10px 10px;
     border-radius: 10px;
     border: 0px;
@@ -60,14 +64,14 @@
    
 }
 
-#left-side input::placeholder{
+#rigth-side input::placeholder{
     color: var(--colorletters);
     font-weight: 550;
     padding-bottom: 15px;
 
 }
 
-
+/* radio box check styles */
 .radio-box{
     align-items: start;
     justify-content: space-evenly;
@@ -87,7 +91,7 @@
     justify-content: center;
 }
 
-#left-side button{
+#rigth-side button{
     background-color: var(--bglogininput);
     padding: 5px;
     border: 0;
