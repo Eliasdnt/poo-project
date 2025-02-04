@@ -34,6 +34,7 @@ body {
     display: grid;
     grid-template-rows: auto 1fr auto;
     padding: 15px;
+    align-items: center;
 }
 
 .menu-main-user #logotype {
@@ -62,8 +63,12 @@ body {
     transition: background-color 0.3s;
 }
 
-.menu-main-user nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+
+.menu-main-user nav ul li:hover {
+    background-color:var(--bglogininput); 
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    
 }
 
 .menu-main-user nav ul li img {
