@@ -1,0 +1,57 @@
+.container-perfil {
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin: 0 ;
+    margin-top: -200px;
+}
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 50px;
+}
+.info {
+    flex: 1;
+}
+.info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+.info strong {
+    color: #000;
+}
+.areas-acesso {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+.areas-acesso img {
+    width: 120px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+.button {
+    background: #002855;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.button:hover {
+    background: #001f3f;
+}
