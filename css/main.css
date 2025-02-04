@@ -1,86 +1,252 @@
-/* main page grid layout */
+/* Variáveis CSS para cores */
+:root {
+    --bgmainback: #f4f4f4;
+    --bgmenubar: #2c3e50;
+    --colorletters: #ffffff;
+}
 
-.grid-main{
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bgmainback);
+    color: var(--colorletters);
+}
+
+/* Layout principal da página */
+.grid-main {
     background-color: var(--bgmainback);
     display: grid;
     grid-template-columns: 250px 1fr;
     height: 100vh;
+    width: 100%;
+    gap: 20px;
 }
 
-
-/* menu bar styles */
-
-.menu-main-user{
+/* Menu lateral */
+.menu-main-user {
     background-color: var(--bgmenubar);
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    padding-left: 15px;
+    grid-template-rows: auto 1fr auto;
+    padding: 15px;
 }
 
-.menu-main-user #logotype{
-    width: 225px;
+.menu-main-user #logotype {
+    width: 100%;
+    max-width: 225px;
+    height: auto;
 }
 
-.menu-main-user nav ul{
+.menu-main-user nav ul {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 70px 70px 70px 70px;
- 
+    gap: 15px;
+    list-style: none;
 }
-.menu-main-user nav ul li a{
+
+.menu-main-user nav ul li a {
     display: flex;
     align-items: center;
-    gap: 30px;
-   color:var(--colorletters);
-   text-decoration: none;
-   text-transform: uppercase;
-   font-size: 16px;
-   padding-left: 15px;
-}
-.menu-main-user nav ul li img{
-    width: 40px;
+    gap: 15px;
+    color: var(--colorletters);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.menu-main-user .user-informs{
-    align-content: flex-end;
-    padding-bottom: 40px;
-
+.menu-main-user nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
-.menu-main-user .user-informs div{
+
+.menu-main-user nav ul li img {
+    width: 24px;
+    height: 24px;
+}
+
+.menu-main-user .user-informs {
+    align-self: end;
+    padding-bottom: 20px;
+}
+
+.menu-main-user .user-informs div {
     display: flex;
-   justify-content: space-evenly;
-    padding-bottom:10px ;
-
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
-.menu-main-user .user-informs .grid-user-informs{
+.menu-main-user .user-informs .grid-user-informs {
     display: grid;
     grid-template-columns: 1fr;
     gap: 5px;
 }
 
-.menu-main-user .user-informs .grid-user-informs h4{
-    font-size: 25px;
-    font-weight: 450;
-   }
-.menu-main-user .user-informs .grid-user-informs span{
- font-size: 12px;
- font-weight: 100;
+.menu-main-user .user-informs .grid-user-informs h4 {
+    font-size: 18px;
+    font-weight: 500;
 }
 
+.menu-main-user .user-informs .grid-user-informs span {
+    font-size: 12px;
+    font-weight: 300;
+}
 
-.menu-main-user .user-informs #user{
+.menu-main-user .user-informs #user {
     width: 35px;
     height: 35px;
     background-color: var(--bgmainback);
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
-.menu-main-user h6{
+.menu-main-user h6 {
     font-size: 10px;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
+    margin-top: 10px;
 }
 
-/* infor main user styles */
+/* Conteúdo principal */
+.main-user-side-rigth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    gap: 100px;
+    background-color: var(--bgmenubar);
+    border-radius: 10px;
+    padding: 20px;
+    
+}
 
+.main-user-side-rigth .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    /* margin-top: -150px; */
+}
+
+.main-user-side-rigth .header span {
+    font-size: 16px;
+    font-weight: 400;
+    align-content: start;
+
+}
+
+.main-user-side-rigth .info-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    /* margin-top: -650px; */
+}
+
+.main-user-side-rigth .info-cards .card {
+    background-color: var(--bgmainback);
+    object-fit: cover;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 300px;
+}
+
+.main-user-side-rigth .info-cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.main-user-side-rigth .info-cards .card img {
+    width: 100%;
+    max-width: 500px;
+    height: 100%;
+    min-height: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.main-user-side-rigth .info-cards .card p {
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--colorletters);
+    margin-top: 10px;
+}
+
+.main-user-side-rigth .info-cards .card h3 {
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--colorletters);
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 1400px) {
+    .grid-main {
+        grid-template-columns: 200px 1fr;
+    }
+
+    .menu-main-user nav ul li a {
+        font-size: 12px;
+    }
+    .main-user-side-rigth {
+        /* gap: 600px; */
+    }
+
+    .main-user-side-rigth .info-cards {
+        gap: 60px;
+       
+    }
+  
+    .main-user-side-rigth .info-cards .card {
+        max-width: 550px;
+    }
+
+    .main-user-side-rigth .info-cards {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+
+    .main-user-side-rigth .header{
+        /* margin-top: 0px; */
+    }
+    .main-user-side-rigth .info-cards .card img{
+        width: 100%;
+        max-width: 200px;
+        height: 100%;
+        min-height: 200px;
+        height: auto;
+        border-radius: 10px;
+        object-fit: cover;
+
+    } 
+    .main-user-side-rigth .info-cards .card {
+        max-width: 250px;
+
+    } 
+}
+
+@media (max-width: 480px) {
+    .menu-main-user nav ul {
+        grid-template-columns: 1fr;
+    }
+
+    .main-user-side-rigth .info-cards {
+        grid-template-columns: 1fr;
+    }
+}
