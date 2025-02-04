@@ -2,6 +2,9 @@
 /* imports área */
 @import "login.css";
 @import "main.css";
+@import "reg_compra_user.css";
+@import "perfil.css";
+@import "depedentes.css";
 
 /* variables colors */
 :root{
