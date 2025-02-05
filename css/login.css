@@ -96,5 +96,13 @@
     padding: 5px;
     border: 0;
     border-radius: 10px;   
-   
+    cursor: pointer;
+}
+
+#rigth-side #forgotPasswordBtn{
+    background-color: var(--bgloginpage);
+    text-align: start;
+    margin-top: 15px;
+    color: #fff;
+    cursor: pointer;
 }
