@@ -20,18 +20,18 @@
         <div id="rigth-side">
             <h2>Login</h2>
 
-            <form action="" method="post">
+            <form id="loginForm" onsubmit="handleLogin(event)">
                 
-                <div><input type="email" placeholder="email" required>
-                    <input type="password" placeholder="senha" required>
+                <div><input type="email" placeholder="email" id="email" required>
+                    <input type="password" placeholder="senha" id="password" required>
                     <div class="radio-box">
                         <label><input type="radio" value="colaborador" name="type">Colaborador</label>
                         <label><input type="radio" value="cliente" name="type">Cliente</label>
                     </div>
                 </div>
 
-                <button onclick="">Entrar</button>
-                <span><a href="">Esqueceu a Senha?</a></span>
+                <button type="submit">Entrar</button>
+                <button id="forgotPasswordBtn">Esqueceu a Senha?</button>
 
             </form>
 
@@ -39,6 +39,7 @@
     </div>
 
 </body>
-<script src="main.js"></script>
+<script src="js/main.js"></script>
+<script src="js/test.js"></script>
 
 </html>
