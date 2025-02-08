@@ -1,12 +1,12 @@
 function employeeADD() {
-    const name = "Elias";
-    const email = "antoniodnt22@gmail.com";
+    const name = "Jonatas";
+    const email = "jonatas@gmail.com";
     const password = "teste@123";
     const role = 1;
 
     console.log("Tentando adicionar usuário com:", name, email, password, role);
 
-    const url = `https://95c4-190-89-153-0.ngrok-free.app/employee/add-employee?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&role=${role}`;
+    const url = `https://09cd-190-89-153-13.ngrok-free.app/employee/add-employee?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&role=${role}`;
 
     fetch(url, {
         method: "POST",

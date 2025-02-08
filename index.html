@@ -1,45 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="assets/logo_svg.svg" type="image/svg+xml">
-    <meta name="theme-color" content="#0B1231">
-
-    <!-- <title>HOTEL CARD</title> -->
+    <!-- <title>Login</title> -->
 </head>
-
 <body>
-
     <div id="login">
         <div id="left-side">
-            <img src="assets/logo_svg.svg" alt="">
+            <img src="assets/logo_svg.svg" alt="Logo">
         </div>
         <div id="rigth-side">
             <h2>Login</h2>
-
-            <form id="loginForm" onsubmit="handleLogin(event)">
-                
-                <div><input type="email" placeholder="email" id="email" required>
-                    <input type="password" placeholder="senha" id="password" required>
-                    <div class="radio-box">
-                        <label><input type="radio" value="colaborador" name="type">Colaborador</label>
-                        <label><input type="radio" value="cliente" name="type">Cliente</label>
-                    </div>
+            <form id="loginForm">
+                <input type="email" placeholder="E-mail" id="email" required>
+                <input type="password" placeholder="Senha" id="password" required>
+                <div class="radio-box">
+                    <label><input type="radio" name="type" value="colaborador">Colaborador</label>
+                    <label><input type="radio" name="type" value="cliente">Cliente</label>
                 </div>
-
                 <button type="submit">Entrar</button>
-                <button id="forgotPasswordBtn">Esqueceu a Senha?</button>
-
+                <button id="forgotPasswordBtn" type="button">Esqueceu a Senha?</button>
             </form>
-
         </div>
     </div>
 
-</body>
-<script src="js/main.js"></script>
-<script src="js/test.js"></script>
+    <!-- Scripts no FINAL do body -->
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    
+
+    <!-- <script src="js/test.js"></script> -->
+</body>
 </html>

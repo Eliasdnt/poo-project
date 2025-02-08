@@ -6,6 +6,7 @@
 @import "perfil.css";
 @import "depedentes.css";
 
+
 /* variables colors */
 :root{
     --bgloginpage:#0D1A3D;
@@ -18,7 +19,7 @@
 *{
     margin: 0;
     padding: 0;
-    border: 0bg;
+    border: 0;
     display: block;
     font-family: "Poppins" , Arial, Helvetica, sans-serif;
     box-sizing: border-box;
