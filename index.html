@@ -1,13 +1,16 @@
-<!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- <title>Login</title>  -->
     <link rel="icon" href="assets/logo_svg.svg" type="image/svg+xml">
-    <!-- <title>Login</title> -->
+
 </head>
+
 <body>
     <div id="login">
         <div id="left-side">
@@ -24,20 +27,28 @@
                 </div>
                 <button type="submit">Entrar</button>
                 <button id="forgotPasswordBtn" type="button">Esqueceu a Senha?</button>
+
+                <!-- Botão para abrir a modal -->
+                
+
+                <!-- Modal de recuperação de senha -->
+                <div id="forgotPasswordModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <h3>Recuperação de Senha</h3>
+                        <p>Digite seu e-mail para receber um link de redefinição de senha.</p>
+                        <input type="email" id="forgotEmail" placeholder="Seu e-mail" >
+                        <div class="modal-buttons">
+                            <button id="sendResetEmail">Enviar</button>
+                            <button id="closeModal" type="button">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+
             </form>
         </div>
     </div>
 
-    <!-- Scripts no FINAL do body -->
     <script src="js/main.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    
-
-    <!-- <script src="js/test.js"></script> -->
 </body>
+
 </html>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../js/main.js"></script>
-        <link rel="stylesheet" href="../css/style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cad_user.css">
     <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0B1231">
 
-    
 </head>
 
 <body>
@@ -21,55 +21,64 @@
                 <nav>
                     <ul>
                         <li><a href="home.html"><img src="../assets/home.svg" alt="">Home</a></li>
-                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a></li>
-                        <li><a href="perfil_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a></li>
-                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastrar Registros</a></li>
+                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a>
+                        </li>
+                        <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a>
+                        </li>
+                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastrar
+                                Registros</a></li>
                     </ul>
                 </nav>
 
-                <div class="user-informs"> <div><img id="user" src="../assets/logo_svg.svg" alt="">
-                    <div class="grid-user-informs"><h4> Username</h4> <span>username.email</span></div></div>
+                <div class="user-informs">
+                    <div><img id="user" src="../assets/logo_svg.svg" alt="">
+                        <div class="grid-user-informs">
+                            <h4> Username</h4> <span>username.email</span>
+                        </div>
+                    </div>
                     <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
                 </div>
 
 
             </div>
             <div class="main-user-side-rigth">
-                <div class="header">
-                    <span>Dependentes</span>
-                    <span style="font-weight: bolder;">username</span>
+                <div class="form-container">
+                    <h1>Adicionar Funcionário</h1>
+                    <form id="employeeForm">
+                      <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" id="name-" name="name" required>
+                      </div>
+                
+                      <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                      </div>
+                
+                      <div class="form-group">
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                      </div>
+                
+                      <div class="form-group">
+                        <label for="role">Função:</label>
+                        <select id="role" name="role" required>
+                          <option value="1">Administrador</option>
+                          <option value="2">Usuário Regular</option>
+                        </select>
+                      </div>
+                
+                      <button type="submit" class="submit-button">Adicionar Funcionário</button>
+                    </form>
+                
+                    <div id="message" class="message"></div>
+                  </div>
+                
 
-                </div>
-            <div class="organizate"> <div class="container-perfil-dep">
-                    <img class="profile-img" src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 22.58.54_cf1aabfc.jpg" alt="Foto de Perfil" >
-                    <div class="info">
-                        <p><strong>Nome Completo:</strong> <span id="nome"></span></p>
-                        <p><strong>Data de Nascimento:</strong> <span id="data-nascimento"></span></p>
-                        <p><strong>Email:</strong> <span id="email"></span></p>
-                        <p><strong>Quarto:</strong> <span id="quarto"></span></p>
-                        
-                   <div class="buttons-dependentes">
-                            <button class="button-dependentes">Atualizar Cadastro</button>
-                            <button class="button-dependentes">Editar Áreas de Acesso</button>
-                        </div> </div>
-                        
-                </div>
-                <div class="container-perfil-dep">
-                    <img class="profile-img" src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 22.58.54_cf1aabfc.jpg" alt="Foto de Perfil" >
-                    <div class="info">
-                        <p><strong>Nome Completo:</strong> <span id="nome"></span></p>
-                        <p><strong>Data de Nascimento:</strong> <span id="data-nascimento"></span></p>
-                        <p><strong>Email:</strong> <span id="email"></span></p>
-                        <p><strong>Quarto:</strong> <span id="quarto"></span></p>                     
-                    
-                   <div class="buttons-dependentes">
-                            <button class="button-dependentes">Atualizar Cadastro</button>
-                            <button class="button-dependentes">Editar Áreas de Acesso</button>
-                        </div> </div>
-                </div></div>
-        </div>
-    </div>
-</main>
+            </div>
+    </main>
+    <script src="../js/main.js"></script>
+    <!-- <script src="../js/test.js"></script> -->
 
 </body>
 

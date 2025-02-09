@@ -1,75 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="../js/main.js"></script>
-        <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml">
-    <meta name="theme-color" content="#0B1231">
-
-    
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Carrega o script apenas uma vez, com defer para aguardar o carregamento do DOM -->
+  <script src="../js/main.js" defer></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/modal-box.css">
+  <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0B1231">
+  <!-- <title>Home - Hotel Card</title> -->
 </head>
-
 <body>
-
-    <main>
-        <div class="grid-main">
-            <div class="menu-main-user">
-                <img id="logotype" src="../assets/logo_svg.svg" alt="logotype">
-                <nav>
-                    <ul>
-                        <li><a href="home.html"><img src="../assets/home.svg" alt="">Home</a></li>
-                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a></li>
-                        <li><a href="perfil_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a></li>
-                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastrar Registros</a></li>
-                    </ul>
-                </nav>
-
-                <div class="user-informs"> <div><img id="user" src="../assets/logo_svg.svg" alt="">
-                    <div class="grid-user-informs"><h4> Username</h4> <span>username.email</span></div></div>
-                    <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
-                </div>
-
-
+  <main>
+    <div class="grid-main">
+      <div class="menu-main-user">
+        <img id="logotype" src="../assets/logo_svg.svg" alt="logotype">
+        <nav>
+          <ul>
+            <li><a href="home.html"><img src="../assets/home.svg" alt="">Home</a></li>
+            <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a></li>
+            <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt="">Cadastro de Usuários</a></li>
+            <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt="">Cadastrar Registros</a></li>
+          </ul>
+        </nav>
+        <div class="user-informs">
+          <div>
+            <img id="user" src="../assets/logo_svg.svg" alt="">
+            <div class="grid-user-informs">
+              <h4>Username</h4>
+              <span>username.email</span>
             </div>
-            <div class="main-user-side-rigth">
-                <div class="header">
-                    <span>INFORMAÇÕES GERAIS</span>
-                    <span style="font-weight: bolder;">username</span>
-                </div>
-            <div class="info-cards">
-                <button onclick="createContract()">Criar Contrato</button>
-               <a href="cad_prod.html"> <div class="card">
-                    <h3>Último Consumo →</h3>
-                    <img   src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.55.41_6c6e8f95.jpg" alt="Cerveja Heineken">
-                    <p>Cerveja Heineken - 330 ml</p>
-                    <!-- <p><strong></strong></p> -->
-                </div>  </a>
-                <a href="cad_registros.html"><div class="card">
-                    <h3>Último Acesso →</h3>
-                    <img   src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.56.06_f954b042.jpg" alt="Quarto 01">
-                    <p>Quarto 01</p>
-                    <!-- <p><strong></strong></p> -->
-                </div></a>
-
-                <a href="cad_user.html"><div class="card">
-                    <h3>Dependentes →</h3>
-                    <img  src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.56.34_1602dd4f.jpg" alt="Dependentes">
-                    <p>Último Registro</p>
-                    <!-- <p><strong></strong></p> -->
-                </div></a>
-            </div>
+          </div>
+          <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
         </div>
-    </div>
-</main>
-<script src="js/main.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-</body>
+      </div>
+      <div class="main-user-side-rigth">
+        <div class="header">
+          <span>INFORMAÇÕES GERAIS</span>
+          <span style="font-weight: bolder;">username</span>
+        </div>
+        <div class="info-cards">
+          <button id="openDataModal" type="button">Enviar Informações</button>
 
+          <!-- Modal para envio de dados -->
+          <div id="dataModal" class="modal-overlay" style="display: none;">
+            <div class="modal-content">
+              <button onclick="abrirmodal">Enviar Informações</button>
+              <form id="dataForm">
+                <!-- Seção de Informações Gerais -->
+                <fieldset>
+                  <legend>Informações Gerais</legend>
+                  <label for="beginAt">Begin At:</label>
+                  <input type="datetime-local" id="beginAt" name="beginAt" required>
+
+                  <label for="finishAt">Finish At:</label>
+                  <input type="datetime-local" id="finishAt" name="finishAt" required>
+
+                  <label for="paymentId">Payment ID:</label>
+                  <input type="number" id="paymentId" name="paymentId" required>
+                </fieldset>
+
+                <!-- Seção do Holder -->
+                <fieldset>
+                  <legend>Holder</legend>
+                  <label for="holderName">Nome:</label>
+                  <input type="text" id="holderName" name="holderName" required>
+
+                  <label for="holderIsHolder">É o Titular?</label>
+                  <input type="checkbox" id="holderIsHolder" name="holderIsHolder" checked>
+
+                  <label for="holderEmail">Email:</label>
+                  <input type="email" id="holderEmail" name="holderEmail" required>
+
+                  <label for="holderCpf">CPF:</label>
+                  <input type="number" id="holderCpf" name="holderCpf" required>
+
+                  <label for="holderCellPhone">Celular:</label>
+                  <input type="text" id="holderCellPhone" name="holderCellPhone" required>
+
+                  <label for="holderAddress">Endereço:</label>
+                  <input type="text" id="holderAddress" name="holderAddress" required>
+
+                  <label for="holderDateOfBirth">Data de Nascimento:</label>
+                  <input type="date" id="holderDateOfBirth" name="holderDateOfBirth" required>
+
+                  <label for="holderPhotoUrl">URL da Foto:</label>
+                  <input type="url" id="holderPhotoUrl" name="holderPhotoUrl">
+
+                  <label for="holderRoom">Número do Quarto:</label>
+                  <input type="number" id="holderRoom" name="holderRoom" required>
+
+                  <label for="holderAccessAreaIds">IDs de Acesso (separados por vírgula):</label>
+                  <input type="text" id="holderAccessAreaIds" name="holderAccessAreaIds" placeholder="Ex: 1,2,3" required>
+                </fieldset>
+
+                <!-- Seção do Dependente -->
+                <fieldset>
+                  <legend>Dependente</legend>
+                  <label for="dependentName">Nome:</label>
+                  <input type="text" id="dependentName" name="dependentName" required>
+
+                  <label for="dependentEmail">Email:</label>
+                  <input type="email" id="dependentEmail" name="dependentEmail" required>
+
+                  <label for="dependentIsHolder">É o Titular?</label>
+                  <input type="checkbox" id="dependentIsHolder" name="dependentIsHolder">
+
+                  <label for="dependentCpf">CPF:</label>
+                  <input type="number" id="dependentCpf" name="dependentCpf" required>
+
+                  <label for="dependentDateOfBirth">Data de Nascimento:</label>
+                  <input type="date" id="dependentDateOfBirth" name="dependentDateOfBirth" required>
+
+                  <label for="dependentPhotoUrl">URL da Foto:</label>
+                  <input type="url" id="dependentPhotoUrl" name="dependentPhotoUrl">
+
+                  <label for="dependentRoom">Número do Quarto:</label>
+                  <input type="number" id="dependentRoom" name="dependentRoom" required>
+
+                  <label for="dependentAccessAreaIds">IDs de Acesso (separados por vírgula):</label>
+                  <input type="text" id="dependentAccessAreaIds" name="dependentAccessAreaIds" placeholder="Ex: 1,2,3" required>
+                </fieldset>
+
+                <!-- Botões de ação -->
+                <div class="modal-buttons">
+                  <button type="submit" id="sendData">Enviar</button>
+                  <button type="button" id="closeDataModal">Cancelar</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <a href="cad_prod.html">
+            <div class="card">
+              <h3>Último Consumo →</h3>
+              <img src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.55.41_6c6e8f95.jpg" alt="Cerveja Heineken">
+              <p>Cerveja Heineken - 330 ml</p>
+            </div>
+          </a>
+          <a href="cad_registros.html">
+            <div class="card">
+              <h3>Último Acesso →</h3>
+              <img src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.56.06_f954b042.jpg" alt="Quarto 01">
+              <p>Quarto 01</p>
+            </div>
+          </a>
+          <a href="cad_user.html">
+            <div class="card">
+              <h3>Dependentes →</h3>
+              <img src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.56.34_1602dd4f.jpg" alt="Dependentes">
+              <p>Último Registro</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
 </html>

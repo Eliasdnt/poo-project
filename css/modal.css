@@ -1,0 +1,57 @@
+/* Estiliza o fundo escuro ao abrir a modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Conteúdo da modal */
+.modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+}
+
+/* Input dentro da modal */
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botões da modal */
+.modal-buttons button {
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+}
+.modal-buttons{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+#sendResetEmail {
+    background-color: #28a745 !important;
+    color: white;
+}
+
+#closeModal {
+    background-color: #dc3545 !important;
+    color: white;
+}
