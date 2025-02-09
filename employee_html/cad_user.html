@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/cad_user.css">
     <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0B1231">
-
+    <!-- <title>Cadastro de Usuários e Hóspedes</title> -->
 </head>
 
 <body>
@@ -21,62 +21,111 @@
                 <nav>
                     <ul>
                         <li><a href="home.html"><img src="../assets/home.svg" alt="">Home</a></li>
-                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a>
-                        </li>
-                        <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a>
-                        </li>
-                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastrar
-                                Registros</a></li>
+                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a></li>
+                        <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a></li>
+                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastrar Registros</a></li>
                     </ul>
                 </nav>
 
                 <div class="user-informs">
-                    <div><img id="user" src="../assets/logo_svg.svg" alt="">
+                    <div>
+                        <img id="user" src="../assets/logo_svg.svg" alt="">
                         <div class="grid-user-informs">
-                            <h4> Username</h4> <span>username.email</span>
+                            <h4>Username</h4>
+                            <span>username.email</span>
                         </div>
                     </div>
                     <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
                 </div>
-
-
             </div>
-            <div class="main-user-side-rigth">
-                <div class="form-container">
-                    <h1>Adicionar Funcionário</h1>
-                    <form id="employeeForm">
-                      <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name-" name="name" required>
-                      </div>
-                
-                      <div class="form-group">
-                        <label for="email">E-mail:</label>
-                        <input type="email" id="email" name="email" required>
-                      </div>
-                
-                      <div class="form-group">
-                        <label for="password">Senha:</label>
-                        <input type="password" id="password" name="password" required>
-                      </div>
-                
-                      <div class="form-group">
-                        <label for="role">Função:</label>
-                        <select id="role" name="role" required>
-                          <option value="1">Administrador</option>
-                          <option value="2">Usuário Regular</option>
-                        </select>
-                      </div>
-                
-                      <button type="submit" class="submit-button">Adicionar Funcionário</button>
-                    </form>
-                
-                    <div id="message" class="message"></div>
-                  </div>
-                
 
+            <div style="grid-template-rows: 100px 1fr;" class="main-user-side-rigth">
+                <div style="margin-top: -20px;" class="header">
+                    <span>Produtos</span>
+                    <span style="font-weight: bolder;">username</span>
+                </div>
+                <div style="display: flex; gap: 50px;" class="form-container">
+                    <div>
+                        <h1>Adicionar Funcionário</h1>
+                        <form id="employeeForm">
+                            <div class="form-group">
+                                <label for="name">Nome:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">Senha:</label>
+                                <input type="password" id="password" name="password" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="role">Função:</label>
+                                <select id="role" name="role" required>
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Usuário Regular</option>
+                                </select>
+                            </div>
+                            
+                            <button id="submit_employee" type="submit" class="submit-button">Adicionar Funcionário</button>
+                            <div id="message" class="message"></div>
+                        </form>
+                    </div>
+
+
+                    <div>
+                        <h1>Adicionar Hóspede</h1>
+                        <form id="guestForm">
+                            <div class="form-group">
+                                <label for="name">Nome:</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="contato">Contato:</label>
+                                <input type="text" id="contato" name="contato" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="cpf">CPF:</label>
+                                <input type="text" id="cpf" name="cpf" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nasc">Data de Nascimento:</label>
+                                <input type="text" id="nasc" name="nasc" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="areas">Áreas de Acesso:</label>
+                                <select id="areas" name="areas">
+                                    <option value="1">Restaurante</option>
+                                    <option value="2">Academia</option>
+                                    <option value="3">Sala de Jogos</option>
+                                    <option value="4">Área Kids</option>
+                                    <option value="5">Área de Lazer</option>
+                                    <option value="6">Piscina</option>
+                                </select>
+                            </div>
+                            <button id="submit_guest" type="submit" class="submit-button">Adicionar Hóspede</button>
+                            <div id="message" class="message"></div>
+                        </form>
+                    </div>
+
+                </div>
             </div>
+        </div>
     </main>
+
     <script src="../js/main.js"></script>
     <!-- <script src="../js/test.js"></script> -->
 

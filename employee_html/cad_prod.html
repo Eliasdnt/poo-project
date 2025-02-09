@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="main.js"></script>
         <link rel="stylesheet" href="../css/style.css">
+        
     <link rel="icon" href="assets/logo_svg.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0B1231">
 
@@ -13,7 +14,6 @@
 </head>
 
 <body>
-
     <main>
         <div class="grid-main">
             <div class="menu-main-user">
@@ -23,7 +23,7 @@
                         <li><a href="home.html"><img src="../assets/home.svg" alt="">Home</a></li>
                         <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a></li>
                         <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a></li>
-                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastrar Registros</a></li>
+                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastro de Registro</a></li>
                     </ul>
                 </nav>
 
@@ -36,24 +36,32 @@
             </div>
             <div class="main-user-side-rigth">
                 <div class="header">
-                    <span>Atualização de Dados de Cadastro</span>
+                    <span>Produtos</span>
                     <span style="font-weight: bolder;">username</span>
                 </div>
-                <div class="container-perfil">
-                   <div class="image-container"> <img id="profile-img-perfil" height="292px" src="../assets/pexels-shtefutsa-20265009.jpg" alt="Foto de Perfil" ></div>
-                    <div class="info">
-                        <p><strong>Nome Completo:</strong> <span id="nome"></span></p>
-                        <p><strong>Data de Nascimento:</strong> <span id="data-nascimento"></span></p>
-                        <p><strong>Email:</strong> <span id="email"></span></p>
-                        <p><strong>Endereço:</strong> <span id="endereco"></span></p>
-                        <p><strong>Quarto:</strong> <span id="quarto"></span></p>
-                        <p><strong>Titular?</strong> <span id="titular"></span></p>
-                        <p><strong>Quantos Dependentes:</strong> <span id="dependentes"></span></p>
-                        <div id="areas-acesso" class="areas-acesso"></div>
-                        <div class="buttons">
-                            <button class="button">Atualizar Cadastro</button>
-                            <button class="button">Editar Áreas de Acesso</button>
-                        </div>
+                <div class="container">
+                    <h3>Histórico</h3>  <button style="
+    background-color: var(--bgloginpage);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    justify-self: right;
+    margin-top: -25px;
+   " type="button">Adicionar Novo Produto</button>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data</th>
+                                    <th>Produto / Serviço</th>
+                                    <th>Valor</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                <!-- Dados da API serão inseridos aqui -->
+                            </tbody>
+                        </table>
                     </div>
                 </div>
         </div>

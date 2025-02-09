@@ -88,3 +88,15 @@
     background: #dc3545;
     color: #fff;
 }
+
+#openDataModal{
+    background-color: var(--bgloginpage);
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    justify-self: right;
+    margin-bottom: 150px;
+    margin-right: 150px;
+    margin-top: -300px;
+
+}

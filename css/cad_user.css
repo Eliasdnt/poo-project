@@ -2,14 +2,27 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 100%;
+    /* max-height: 300px;  */
+    overflow-y: auto;
     margin: 0 auto;
-    margin-top: 400px;
+    /* margin-top: 150px; */
+    z-index: 99999099;
+    display: flex;
+    gap: 100px;
+    overflow-y: auto;
+    justify-content: center;
+    align-self: center;
+    
   }
 
   .form-group {
     margin-bottom: 15px;
+  }
+  .form-container div{
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+
   }
 
   label {
@@ -27,7 +40,7 @@
   }
 
   .submit-button {
-    background-color: #007bff;
+    background-color:#0D1A3D;
     color: white;
     padding: 10px 15px;
     border: none;
