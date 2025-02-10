@@ -1,30 +1,42 @@
-function employeeADD() {
-    const name = "Jonatas";
-    const email = "jonatas@gmail.com";
-    const password = "teste@123";
-    const role = 1;
+async function getGuest() {
+    const url = 'https://7d8f-190-89-153-9.ngrok-free.app/guestflow/get-guest';
+    const token = localStorage.getItem('authToken');
+    
+    if (!token) {
+        console.error('Token de autenticação não encontrado. Faça login novamente.');
+        return;
+    }
 
-    console.log("Tentando adicionar usuário com:", name, email, password, role);
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        });
 
-    const url = `https://09cd-190-89-153-13.ngrok-free.app/employee/add-employee?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&role=${role}`;
-
-    fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" }
-    })
-    .then(response => {
-        if (!response.ok) {
-            return response.json().then(data => {
-                const errorMessage = data.message || `Erro HTTP ${response.status}`;
-                throw new Error(errorMessage);
-            }).catch(() => {
-                throw new Error(`Erro HTTP ${response.status}`);
-            });
+        if (response.status === 401) {
+            console.error('401 Unauthorized: Token inválido ou expirado.');
+            localStorage.removeItem('authToken');
+            window.location.href = '/login'; // Ajuste o caminho conforme necessário
+            return;
         }
-        return response.json();
-    })
-    .then(data => console.log("Usuário adicionado com sucesso:", data))
-    .catch(error => console.error("Erro ao adicionar usuário:", error));
+
+        if (!response.ok) {
+            throw new Error(`Erro HTTP! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Resposta da API:', data);
+        return data; // Retorna os dados para uso externo
+
+    } catch (error) {
+        console.log( error); // Exibe o objeto de erro completo
+         // Propaga o erro para quem chamar a função
+    }
 }
 
-employeeADD();
+// Exemplo de uso:
+getGuest()
+    .then(data => console.log('Dados recebidos:', data))
+    .catch(error => console.error('Falha:', error));
