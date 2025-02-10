@@ -19,7 +19,7 @@ if (loginForm) {
     const requestBody = { email, password };
     localStorage.setItem("authToken", '');
     try {
-      const response = await fetch("https://7d8f-190-89-153-9.ngrok-free.app/auth/login", {
+      const response = await fetch("https://5c16-190-89-153-6.ngrok-free.app/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(requestBody)
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
         try {
-          const response = await fetch("https://7d8f-190-89-153-9.ngrok-free.app/auth/forgot-password", {
+          const response = await fetch("https://5c16-190-89-153-6.ngrok-free.app/auth/forgot-password", {
             method: "POST",
             headers: {
               "Content-Type": "application/json" // Removed Authorization header
