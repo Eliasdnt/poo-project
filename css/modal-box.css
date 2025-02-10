@@ -12,7 +12,9 @@
     overflow-y: auto;
     z-index: 9999; /* Garante que o modal esteja no topo */
 }
-
+#forgotPasswordModal .modal-overlay{
+    display: none;
+}
 /* Conteúdo da modal com dimensões maiores */
 .modal-content {
     background: #fff;
@@ -24,6 +26,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     animation: fadeIn 0.3s ease;
     overflow-y: auto;
+   
      /* Adiciona uma animação para suavidade */
 }
 
