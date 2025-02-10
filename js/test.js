@@ -1,98 +1,94 @@
-// Função para buscar consumo por CPF
-async function fetchConsumptionByCPF(cpf) {
-    const url = `https://5c16-190-89-153-6.ngrok-free.app/consumption/get-consumption-by-guest?cpf=${cpf}`;
+document.addEventListener('DOMContentLoaded', function() {
+    // Obtém o token do localStorage
     const token = localStorage.getItem('authToken');
 
-    try {
-        const response = await fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': token ? `Bearer ${token}` : '',
-                'accept': 'application/json',
-                'ngrok-skip-browser-warning': '6024'
-            }
-        });
+    const modal = document.getElementById('modal');
+    const openModalBtn = document.getElementById('openModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const cardForm = document.getElementById('cardForm');
 
-        if (!response.ok) {
-            throw new Error(`Erro ao buscar os dados: ${response.status}`);
+    // Abrir modal
+    openModalBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+    });
+
+    // Fechar modal ao clicar no botão de fechar
+    closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Fechar modal ao clicar fora dele
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Envio do formulário
+    cardForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        // Validação do token
+        if (!token) {
+            alert("Usuário não autenticado. Faça login primeiro.");
+            return;
         }
 
-        const data = await response.json();
-        return data;
+        // Captura e limpeza dos campos
+        const cpfInput = document.getElementById('cpf').value.trim();
+        const cardNumberInput = document.getElementById('cardNumber').value.trim();
 
-    } catch (error) {
-        console.error('Erro ao obter os dados:', error);
-        throw error;
-    }
-}
+        if (!cpfInput || !cardNumberInput) {
+            alert("Preencha todos os campos!");
+            return;
+        }
 
-// Função para exibir os dados na tabela
-async function fetchAndDisplayConsumption(cpf) {
-    try {
-        const guestData = await fetchConsumptionByCPF(cpf);
+        // Verifica se os valores são numéricos
+        if (isNaN(cpfInput) || isNaN(cardNumberInput)) {
+            alert("CPF e número do cartão devem ser números válidos!");
+            return;
+        }
 
-        // Mapeamento de IDs para nomes de produtos
-        const productMap = {
-            1: 'Água Mineral',
-            2: 'Refrigerante Lata',
-            3: 'Suco Natural',
-            4: 'Café Expresso',
-            5: 'Vinho Suave',
-            6: 'Heineken',
-            7: 'Sanduíche Natural',
-            8: 'Salada Caesar',
-            9: 'Prato Executivo (Carne)',
-            10: 'Prato Executivo (Frango)',
-            11: 'Prato Executivo (Vegetariano)',
-            12: 'Sobremesa (Pudim)',
-            13: 'Sobremesa (Mousse de Chocolate)'
-        };
+        // Converte as entradas para números
+        const cpf = Number(cpfInput);
+        const cardOfNumber = Number(cardNumberInput);
 
-        // Seleciona o corpo da tabela
-        const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
+        // Cria o payload a ser enviado
+        const payload = { cpf: cpf, cardOfNumber: cardOfNumber };
+        console.log("Payload enviado:", payload);
 
-        // Percorre os dados e cria linhas na tabela
-        guestData.forEach(guest => {
-            guest.products.forEach(product => {
-                const row = document.createElement('tr');
-                const productName = productMap[product.productId] || `Produto ID: ${product.productId}`;
-                row.innerHTML = `
-                    <td>${formatDate(guest.dateConsumption)}</td>
-                    <td>${productName} (x${product.quantity})</td>
-                    <td>R$ ${product.price.toFixed(2)}</td>
-                `;
-                tableBody.appendChild(row);
-            });
+        // Envia a requisição para a API
+        fetch("https://f8cc-200-17-32-208.ngrok-free.app/register-card", {
+            method: "POST",
+            headers: { 
+                'Authorization': `Bearer ${token}`,
+                "Content-Type": "application/json",
+                'ngrok-skip-browser-warning': '6024'
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (!response.ok) {
+                // Se a API retornar erro, captura o texto da resposta para debug
+                return response.text().then(text => {
+                    throw new Error(`HTTP error ${response.status}: ${text}`);
+                });
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Resposta da API:', data);
+            // Aqui você pode acessar os dados retornados, por exemplo:
+            // data.name, data.email, data.address, etc.
+            // Atualize elementos na sua página ou modal conforme necessário.
+            alert('Dados enviados com sucesso!');
+            modal.style.display = 'none';
+            cardForm.reset(); // Limpa os campos do formulário
+        })
+        .catch(error => {
+            console.error('Erro:', error);
+            alert(`Erro: ${error.message || "Falha na conexão."}`);
         });
-
-    } catch (error) {
-        console.error('Erro ao obter os dados:', error);
-        alert('Erro ao buscar os dados. Verifique o console para mais detalhes.');
-    }
-}
-
-// Função para formatar a data no formato DD/MM/AAAA HH:MM
-function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
-}
-
-// Lógica para abrir o modal e buscar os dados
-document.getElementById('openModalButton').addEventListener('click', () => {
-    const modal = document.getElementById('cpfModal');
-    modal.style.display = 'block';
+    });
 });
-
-document.getElementById('searchButton').addEventListener('click', () => {
-    const cpf = document.getElementById('cpfInput').value;
-    if (!cpf || !/^\d+$/.test(cpf)) {
-        alert('Por favor, insira um CPF válido (apenas números).');
-        return;
-    }
-
-    const modal = document.getElementById('cpfModal');
-    modal.style.display = 'none'; // Fecha o modal
-
-    fetchAndDisplayConsumption(cpf); // Busca e exibe os dados
-});
+s

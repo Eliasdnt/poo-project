@@ -1,6 +1,6 @@
 // Função para buscar consumo por CPF
 async function fetchConsumptionByCPF(cpf) {
-    const url = `https://5c16-190-89-153-6.ngrok-free.app/consumption/get-consumption-by-guest?cpf=${cpf}`;
+    const url = `https://f8cc-200-17-32-208.ngrok-free.app/consumption/get-consumption-by-guest?cpf=${cpf}`;
     const token = localStorage.getItem('authToken');
 
     try {
