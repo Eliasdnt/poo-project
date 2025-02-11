@@ -84,6 +84,10 @@ Se deseja contribuir com o projeto:
 
 ---
 
+**Observações**
+
+Não foi implementado responsividade
+
 📄 **Licença**
 
 Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e contribuir! 🎉
