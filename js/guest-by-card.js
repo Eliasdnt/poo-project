@@ -23,7 +23,7 @@ document.getElementById('guestForm').addEventListener('submit', async function(e
 
 // Função para buscar hóspedes por número do cartão
 async function fetchGuestsByCard(cardNumber) {
-    const url = `https://4f02-190-89-153-6.ngrok-free.app/guestflow/get-guest-by-card?card=${cardNumber}`;
+    const url = `https://f8b3-177-14-232-8.ngrok-free.app/guestflow/get-guest-by-card?card=${cardNumber}`;
     const token = localStorage.getItem('authToken');
 
     try {

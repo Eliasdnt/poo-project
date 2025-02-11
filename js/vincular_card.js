@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log("Payload enviado:", payload);
 
         // Envia a requisição para a API
-        fetch("https://4f02-190-89-153-6.ngrok-free.app/register-card", {
+        fetch("https://f8b3-177-14-232-8.ngrok-free.app/register-card", {
             method: "POST",
             headers: { 
                 'Authorization': `Bearer ${token}`,

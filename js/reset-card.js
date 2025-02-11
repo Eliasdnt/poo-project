@@ -1,5 +1,5 @@
 document.getElementById('resetCardButton').addEventListener('click', async () => {
-    const url = 'https://4f02-190-89-153-6.ngrok-free.app/reset-card';
+    const url = 'https://f8b3-177-14-232-8.ngrok-free.app/reset-card';
     const token = localStorage.getItem('authToken');
 
     try {

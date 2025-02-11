@@ -23,7 +23,7 @@ document.getElementById('cardForm').addEventListener('submit', async function(ev
 
 // Função para buscar consumo por número do cartão
 async function fetchConsumptionByCard(cardNumber) {
-    const url = `https://4f02-190-89-153-6.ngrok-free.app/consumption/get-consumption-by-card?card=${cardNumber}`;
+    const url = `https://f8b3-177-14-232-8.ngrok-free.app/consumption/get-consumption-by-card?card=${cardNumber}`;
     const token = localStorage.getItem('authToken');
 
     try {

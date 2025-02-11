@@ -43,7 +43,7 @@ function openModal() {
   // Função para enviar os dados via fetch para a API
   async function sendData(formData) {
     try {
-      const response = await fetch('https://4f02-190-89-153-6.ngrok-free.app/guestflow/register-flow', {
+      const response = await fetch('https://f8b3-177-14-232-8.ngrok-free.app/guestflow/register-flow', {
         method: 'POST',
         headers: {
           'Authorization': token ? `Bearer ${token}` : '',
