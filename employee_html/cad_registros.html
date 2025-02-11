@@ -38,8 +38,8 @@
             </div>
             <div class="main-user-side-rigth">
                 <div class="header">
-                    <span>Histórico de Registros</span> 
-                    <span style="font-weight: bolder;">username</span>
+                    <h2>Histórico de Registros</h2> 
+                  
                 </div>
                 <div class="container">
                     <h3>Histórico</h3>  <div style="justify-self: right; display: flex; gap: 30px;"><button style="
@@ -49,7 +49,7 @@
                         border-radius: 10px;
                         justify-self: right;
                         cursor: pointer;                  
-                       " type="button">Adicionar Novo Produto</button>
+                       " type="button" onclick="openModal()">Registrar Acesso</button>
                          <button id="openModalButton" style="
                          background-color: var(--bgloginpage);
                          color: #fff;
@@ -57,7 +57,14 @@
                          border-radius: 10px;
                          justify-self: right;
                          cursor: pointer;
-                     " type="button">Buscar Pelo CPF</button></div>
+                     " type="button">Buscar Pelo CPF</button>
+                     <button id="openGuestModalButton" style=" background-color: var(--bgloginpage);
+                     color: #fff;
+                     padding: 10px;
+                     border-radius: 10px;
+                     justify-self: right;
+                     cursor: pointer">Consultar Pelo Cartão</button> 
+                    </div>
                     
                     <div id="cpfModal" class="modal">
                         <input type="text" id="cpfInput" placeholder="Digite o CPF (apenas números)" />
@@ -70,7 +77,7 @@
    <button id="searchButton">Buscar</button>
 </div>
 
-<button onclick="openModal()">Registrar Acesso</button>
+
 
   <!-- Modal de Registro -->
   <div id="mainModal" class="modal">
@@ -104,7 +111,7 @@
   <div id="overlay" class="overlay"></div>
 
 
-  <button id="openGuestModalButton">Consultar Pelo Cartão</button>
+  
 
 <!-- Modal de consulta por cartão -->
 <div id="guestModal" class="modal">

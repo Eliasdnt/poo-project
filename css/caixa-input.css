@@ -10,12 +10,6 @@
     z-index: 1000;
    justify-self: right;
 }
-.button-registro{
-    justify-self: right;
-    background-color: var(--bgloginpage); color: #fff; padding: 20px 40px; border-radius: 20px;
-    margin-top: -450px ;
-
-}
 
 .overlay {
     display: none;
@@ -36,4 +30,37 @@ select, input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
+}
+
+
+.layout-home{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-self: center;
+    gap: 50px;
+    margin-top: -150px;
+    padding: 40px;
+    border: 1px solid #ededed;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 1); */
+}
+.layout-home div{
+    display: grid;
+    grid-template-columns: 1fr ;
+    justify-self: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ededed;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+}
+.layout-home h4{
+    font-size:30px;
+    margin-bottom: 20px;
+}
+
+.layout-home button{
+    background-color: var(--bgloginpage);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 10px;
+
 }

@@ -23,12 +23,13 @@
                         <li><a href="home_user.html"><img src="../assets/home.svg" alt="">Home</a></li>
                         <li><a href="reg_compra_user.html"><img src="../assets/registro.svg" alt="">Registro de Compras</a></li>
                         <li><a href="perfil_user.html"><img src="../assets/perfil.svg" alt=""> Perfil</a></li>
-                        <li><a href="dependentes_user.html"><img src="../assets/acessos.svg" alt=""> Dependentes</a></li>
+                        <li><a href="dependentes_user.html"><img src="../assets/acessos.svg" alt=""> Acessos</a></li>
                     </ul>
                 </nav>
 
                 <div class="user-informs"> <div><img id="user" src="../assets/logo_svg.svg" alt="">
-                    <div class="grid-user-informs"><h4> Username</h4> <span>username.email</span></div></div>
+                    <div class="grid-user-informs">  <h4 id="username">Username</h4>
+                        <span style="font-size: 9px;" id="useremail">username.email</span></div></div>
                     <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
                 </div>
 
@@ -36,11 +37,11 @@
             </div>
             <div class="main-user-side-rigth">
                 <div class="header">
-                    <span>Atualização de Dados de Cadastro</span>
-                    <span style="font-weight: bolder;">username</span>
+                    <h2>Perfil</h2>
+                   
                 </div>
                 <div class="container-perfil">
-                   <div class="image-container"> <img id="profile-img-perfil" height="292px" src="../assets/pexels-shtefutsa-20265009.jpg" alt="Foto de Perfil" ></div>
+                   <div class="image-container"> <img id="profile-img-perfil" height="292px" src="../assets/logo_svg.svg" alt="Foto de Perfil" ></div>
                     <div class="info">
                         <p><strong>Nome Completo:</strong> <span id="nome"></span></p>
                         <p><strong>Data de Nascimento:</strong> <span id="data-nascimento"></span></p>
@@ -51,8 +52,7 @@
                         <p><strong>Quantos Dependentes:</strong> <span id="dependentes"></span></p>
                         <div id="areas-acesso" class="areas-acesso"></div>
                         <div class="buttons">
-                            <button class="button">Atualizar Cadastro</button>
-                            <button class="button">Editar Áreas de Acesso</button>
+                            
                         </div>
                     </div>
                 </div>
@@ -61,5 +61,5 @@
 </main>
 
 </body>
-
+<script src="../js/username.js"></script>
 </html>

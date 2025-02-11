@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <script src="main.js"></script> -->
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/getcpf.css">
-        
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="main.js"></script> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/getcpf.css">
+
     <link rel="icon" href="assets/logo_svg.svg" type="image/svg+xml">
     <meta name="theme-color" content="#0B1231">
 
-    
+
 </head>
 
 <body>
@@ -22,15 +22,22 @@
                 <nav>
                     <ul>
                         <li><a href="home.html"><img src="../assets/home.svg" alt="">Home</a></li>
-                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a></li>
-                        <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a></li>
-                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastro de Registro</a></li>
+                        <li><a href="cad_prod.html"><img src="../assets/registro.svg" alt="">Cadastro de Produtos</a>
+                        </li>
+                        <li><a href="cad_user.html"><img src="../assets/perfil.svg" alt=""> Cadastro de Usuários</a>
+                        </li>
+                        <li><a href="cad_registros.html"><img src="../assets/acessos.svg" alt=""> Cadastro de
+                                Registro</a></li>
                     </ul>
                 </nav>
 
-                <div class="user-informs"> <div><img id="user" src="../assets/logo_svg.svg" alt="">
-                    <div class="grid-user-informs"> <h4 id="username">Username</h4>
-                        <span style="font-size: 9px;" id="useremail">username.email</span></div></div>
+                <div class="user-informs">
+                    <div><img id="user" src="../assets/logo_svg.svg" alt="">
+                        <div class="grid-user-informs">
+                            <h4 id="username">Username</h4>
+                            <span style="font-size: 9px;" id="useremail">username.email</span>
+                        </div>
+                    </div>
                     <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
                 </div>
 
@@ -38,50 +45,58 @@
             </div>
             <div class="main-user-side-rigth">
                 <div class="header">
-                    <span>Produtos</span>
-                    <span style="font-weight: bolder;">username</span>
+                    <h2>Produtos</h2>
+                   
                 </div>
+
+
                 <div class="container">
-                    <h3>Histórico</h3>  <div style="justify-self: right; display: flex; gap: 30px;"><button style="
+                    <h3>Histórico</h3>
+                    <div style="justify-self: right; display: flex; gap: 30px; margin-top: -20px;"><button style="
     background-color: var(--bgloginpage);
     color: #fff;
     padding: 10px;
     border-radius: 10px;
     justify-self: right;
     cursor: pointer;                  
-   " type="button">Adicionar Novo Produto</button>
-     <button id="openModalButton" style="
+   " type="button" id="openCardModalButton">Consultar Consumo pelo Cartão</button>
+                        <button id="openModalButton" style="
      background-color: var(--bgloginpage);
      color: #fff;
      padding: 10px;
      border-radius: 10px;
      justify-self: right;
      cursor: pointer;
- " type="button">Buscar Pelo CPF</button></div>
+ " type="button">Buscar Pelo CPF</button>
+                    </div>
 
-<div id="cpfModal" class="modal">
-    <input type="text" id="cpfInput" placeholder="Digite o CPF (apenas números)" />
-    <button id="searchButton">Buscar</button>
-</div>
+                    <div id="cpfModal" class="modal">
+                        <input type="text" id="cpfInput" placeholder="Digite o CPF (apenas números)" />
+                        <button id="searchButton">Buscar</button>
+                    </div>
 
 
-<button id="openCardModalButton">Consultar Consumo</button>
+              
 
-<!-- Modal de consulta por cartão -->
-<div id="cardModal-" class="modal" style="display: none;">
-    <div class="modal-content">
-        <h3>Consultar por Número do Cartão</h3>
+                    <!-- Modal de consulta por cartão -->
+                    <div id="cardModal-" class="modal" style="display: none;">
+                        <div class="modal-content">
+                            <h3>Consultar por Número do Cartão</h3>
 
-        <!-- Formulário -->
-        <form id="cardForm">
-            <div class="form-group">
-                <label for="cardInput">Número do Cartão:</label>
-                <input type="text" id="cardInput" name="cardNumber" placeholder="Digite o número do cartão" required>
-            </div>
-            <button type="submit">Buscar</button>
-            <button type="button" onclick="closeModals()">Cancelar</button>
-        </form>
-    </div></div>
+                            <!-- Formulário -->
+                            <form id="cardForm">
+                                <div class="form-group">
+                                    <label for="cardInput">Número do Cartão:</label>
+                                    <input type="text" id="cardInput" name="cardNumber"
+                                        placeholder="Digite o número do cartão" required>
+                                </div>
+                                <button type="submit">Buscar</button>
+                                <button type="button" onclick="closeModals()">Cancelar</button>
+                            </form>
+                        </div>
+                    </div>
+
+
 
                     <div class="table-container">
                         <table>
@@ -90,7 +105,7 @@
                                     <th>Data</th>
                                     <th>Produto / Serviço</th>
                                     <th>Valor</th>
-                                   
+
                                 </tr>
                             </thead>
                             <tbody id="table-body">
@@ -99,13 +114,13 @@
                         </table>
                     </div>
                 </div>
+            </div>
         </div>
-    </div>
-</main>
-<script src="../js/cad_prod_table.js"></script>
-<script src="../js/getcpf.js"></script>
-<script src="../js/username.js"></script>
-<script src="../js/get-consumption-by-card.js"></script>
+    </main>
+    <script src="../js/cad_prod_table.js"></script>
+    <script src="../js/getcpf.js"></script>
+    <script src="../js/username.js"></script>
+    <script src="../js/get-consumption-by-card.js"></script>
 </body>
 
 </html>
