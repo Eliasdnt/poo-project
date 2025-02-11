@@ -64,6 +64,25 @@
     <button id="searchButton">Buscar</button>
 </div>
 
+
+<button id="openCardModalButton">Consultar Consumo</button>
+
+<!-- Modal de consulta por cartão -->
+<div id="cardModal-" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h3>Consultar por Número do Cartão</h3>
+
+        <!-- Formulário -->
+        <form id="cardForm">
+            <div class="form-group">
+                <label for="cardInput">Número do Cartão:</label>
+                <input type="text" id="cardInput" name="cardNumber" placeholder="Digite o número do cartão" required>
+            </div>
+            <button type="submit">Buscar</button>
+            <button type="button" onclick="closeModals()">Cancelar</button>
+        </form>
+    </div></div>
+
                     <div class="table-container">
                         <table>
                             <thead>
@@ -86,6 +105,7 @@
 <script src="../js/cad_prod_table.js"></script>
 <script src="../js/getcpf.js"></script>
 <script src="../js/username.js"></script>
+<script src="../js/get-consumption-by-card.js"></script>
 </body>
 
 </html>

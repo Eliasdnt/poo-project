@@ -1,0 +1,73 @@
+document.getElementById('openGuestModalButton').addEventListener('click', () => {
+    document.getElementById('guestModal').style.display = 'block';
+    document.getElementById('overlay').style.display = 'block';
+});
+
+function closeGuestModal() {
+    document.getElementById('guestModal').style.display = 'none';
+    document.getElementById('overlay').style.display = 'none';
+}
+
+// Evento para capturar o envio do formulário
+document.getElementById('guestForm').addEventListener('submit', async function(event) {
+    event.preventDefault(); // Evita o recarregamento da página
+
+    const cardNumber = document.getElementById('cardInput').value.trim();
+    if (cardNumber === "") {
+        alert("Por favor, insira um número de cartão válido.");
+        return;
+    }
+
+    await fetchAndDisplayGuests(cardNumber);
+});
+
+// Função para buscar hóspedes por número do cartão
+async function fetchGuestsByCard(cardNumber) {
+    const url = `https://4f02-190-89-153-6.ngrok-free.app/guestflow/get-guest-by-card?card=${cardNumber}`;
+    const token = localStorage.getItem('authToken');
+
+    try {
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Authorization': token ? `Bearer ${token}` : '',
+                'accept': 'application/json',
+                'ngrok-skip-browser-warning': '6024'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error(`Erro ao buscar os dados: ${response.status}`);
+        }
+
+        return await response.json();
+
+    } catch (error) {
+        console.error('Erro ao obter os dados:', error);
+        alert('Erro ao buscar hóspedes.');
+        throw error;
+    }
+}
+
+// Função para exibir os dados na tabela
+async function fetchAndDisplayGuests(cardNumber) {
+    try {
+        const guestData = await fetchGuestsByCard(cardNumber);
+        const tableBody = document.getElementById('table-body');
+        tableBody.innerHTML = ''; // Limpa os dados anteriores
+
+        // Apenas preenche a tabela com os dados retornados pela API
+        guestData.forEach(guest => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${guest.accessAreaName}</td>
+                <td>${guest.guestName}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+
+    } catch (error) {
+        console.error('Erro ao obter os dados:', error);
+        alert('Erro ao buscar hóspedes.');
+    }
+}

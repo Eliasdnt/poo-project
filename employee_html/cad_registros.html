@@ -69,6 +69,58 @@
    <input type="text" id="cpfInput" placeholder="Digite o CPF (apenas números)" />
    <button id="searchButton">Buscar</button>
 </div>
+
+<button onclick="openModal()">Registrar Acesso</button>
+
+  <!-- Modal de Registro -->
+  <div id="mainModal" class="modal">
+    <h2>Registro de Acesso</h2>
+    <form id="acessoForm" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label>Número do Cartão:</label>
+        <input type="number" id="cardOfNumber" required>
+      </div>
+
+      <div class="form-group">
+        <label>Área de Acesso:</label>
+        <select id="accessAreaId" required>
+          <option value="">Selecione uma área</option>
+          <option value="1">Restaurante</option>
+          <option value="2">Academia</option>
+          <option value="3">Sala de Jogos</option>
+          <option value="4">Área Kids</option>
+          <option value="5">Área de Lazer</option>
+          <option value="6">Piscina</option>
+        </select>
+      </div>
+
+      <button type="submit">Enviar</button>
+      <button type="button" onclick="closeModals()">Cancelar</button>
+    </form>
+  </div>
+
+  <!-- Modal de Resposta -->
+  <div id="responseModal" class="modal"></div>
+  <div id="overlay" class="overlay"></div>
+
+
+  <button id="openGuestModalButton">Consultar Pelo Cartão</button>
+
+<!-- Modal de consulta por cartão -->
+<div id="guestModal" class="modal">
+    <div class="modal-content">
+        <h3>Consultar por Número do Cartão</h3>
+
+        <!-- Formulário -->
+        <form id="guestForm">
+            <div class="form-group">
+                <label for="cardInput">Número do Cartão:</label>
+                <input type="text" id="cardInput" name="cardNumber" placeholder="Digite o número do cartão" required>
+            </div>
+            <button type="submit">Buscar</button>
+            <button type="button" onclick="closeModals()">Cancelar</button>
+        </form>
+</div></div>
                     <div class="table-container">
                         <table>
                             <thead>
@@ -90,6 +142,8 @@
 <script src="../js/cad_register.js"></script>
 <script src="../js/getcpf_reg.js"></script>
 <script src="../js/username.js"></script>
+<script src="../js/register-flow.js"></script>
+<script src="../js/guest-by-card.js"></script>
 </body>
 
 </html>

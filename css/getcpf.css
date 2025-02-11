@@ -1,9 +1,9 @@
 .modal {
     display: none;
     position: fixed;
-    top: 15%;
-    left: 85%;
-    transform: translate(-50%, -50%);
+    top: 50%;          /* Posiciona no meio vertical */
+    left: 50%;         /* Posiciona no meio horizontal */
+    transform: translate(-50%, -50%); /* Centraliza precisamente */
     background-color: white;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

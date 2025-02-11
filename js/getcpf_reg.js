@@ -1,5 +1,5 @@
 async function fetchConsumptionByCPF(cpf) {
-    const url = `https://f8cc-200-17-32-208.ngrok-free.app/guestflow/get-guest-by-cpf?cpf=${cpf}`;
+    const url = `https://4f02-190-89-153-6.ngrok-free.app/guestflow/get-guest-by-cpf?cpf=${cpf}`;
     const token = localStorage.getItem('authToken');
 
     try {
@@ -27,7 +27,7 @@ async function fetchConsumptionByCPF(cpf) {
   // Função para buscar os dados pela API e exibi-los na tabela
   async function fetchAndDisplayConsumption(cpf) {
     try {
-      const guestData = await fetchConsumptionByCPF(cpf);21710920
+      const guestData = await fetchConsumptionByCPF(cpf);
 
 
       // Seleciona o corpo da tabela e limpa dados anteriores

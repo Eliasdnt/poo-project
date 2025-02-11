@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Carrega o script apenas uma vez, com defer para aguardar o carregamento do DOM -->
-  <script src="../js/main.js" defer></script>
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/modal-box.css">
+  <link rel="stylesheet" href="../css/card.css">
+  <link rel="stylesheet" href="../css/caixa-input.css">
   <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml">
   <meta name="theme-color" content="#0B1231">
   <!-- <title>Home - Hotel Card</title> -->
@@ -40,122 +40,90 @@
           <span>INFORMAÇÕES GERAIS</span>
           <span style="font-weight: bolder;">username</span>
         </div>
-        <button id="openDataModal" type="button">Criar Novo Contrato</button>
-        <div class="info-cards">
+     
+        <button style="justify-self:right ; margin-right: 40px; margin-top: -400px; background-color: var(--bgloginpage); color: #fff; padding: 20px 10px; border-radius: 20px;" id="openModal">Vincular Cartão</button>
 
-          <!-- Modal para envio de dados -->
-          <div id="dataModal" class="modal-overlay" style="display: none;">
-            <div class="modal-content">
-              <button onclick="abrirmodal">Enviar Informações</button>
-              <form id="dataForm">
-                <!-- Seção de Informações Gerais -->
-                <fieldset>
-                  <legend>Informações Gerais</legend>
-                  <label for="beginAt">Begin At:</label>
-                  <input type="datetime-local" id="beginAt" name="beginAt" required>
+  <div id="modal" class="modal-" style="display: none;">
+      <div class="modal-content-">
+          <span id="closeModal" class="close-">&times;</span>
+          <form id="cardForm">
+              <label for="cpf">Cpf:</label>
+              <input type="text" id="cpf" name="Cpf" required>
+              <label for="cardNumber">CardOfNumber:</label>
+              <input type="text" id="cardNumber" name="CardOfNumber" required>
+              <button style="background-color: var(--bgloginpage); color: #fff; padding: 20px 40px; border-radius: 20px;" type="submit">Enviar</button>
+          </form>
+      </div>
+  </div>
+  <button class="button-registro" onclick="openModal()">Registrar consumo de Produtos</button>
 
-                  <label for="finishAt">Finish At:</label>
-                  <input type="datetime-local" id="finishAt" name="finishAt" required>
-
-                  <label for="paymentId">Payment ID:</label>
-                  <input type="number" id="paymentId" name="paymentId" required>
-                </fieldset>
-
-                <!-- Seção do Holder -->
-                <fieldset>
-                  <legend>Holder</legend>
-                  <label for="holderName">Nome:</label>
-                  <input type="text" id="holderName" name="holderName" required>
-
-                  <label for="holderIsHolder">É o Titular?</label>
-                  <input type="checkbox" id="holderIsHolder" name="holderIsHolder" checked>
-
-                  <label for="holderEmail">Email:</label>
-                  <input type="email" id="holderEmail" name="holderEmail" required>
-
-                  <label for="holderCpf">CPF:</label>
-                  <input type="number" id="holderCpf" name="holderCpf" required>
-
-                  <label for="holderCellPhone">Celular:</label>
-                  <input type="text" id="holderCellPhone" name="holderCellPhone" required>
-
-                  <label for="holderAddress">Endereço:</label>
-                  <input type="text" id="holderAddress" name="holderAddress" required>
-
-                  <label for="holderDateOfBirth">Data de Nascimento:</label>
-                  <input type="date" id="holderDateOfBirth" name="holderDateOfBirth" required>
-
-                  <label for="holderPhotoUrl">URL da Foto:</label>
-                  <input type="url" id="holderPhotoUrl" name="holderPhotoUrl">
-
-                  <label for="holderRoom">Número do Quarto:</label>
-                  <input type="number" id="holderRoom" name="holderRoom" required>
-
-                  <label for="holderAccessAreaIds">IDs de Acesso (separados por vírgula):</label>
-                  <input type="text" id="holderAccessAreaIds" name="holderAccessAreaIds" placeholder="Ex: 1,2,3" required>
-                </fieldset>
-
-                <!-- Seção do Dependente -->
-                <fieldset>
-                  <legend>Dependente</legend>
-                  <label for="dependentName">Nome:</label>
-                  <input type="text" id="dependentName" name="dependentName" required>
-
-                  <label for="dependentEmail">Email:</label>
-                  <input type="email" id="dependentEmail" name="dependentEmail" required>
-
-                  <label for="dependentIsHolder">É o Titular?</label>
-                  <input type="checkbox" id="dependentIsHolder" name="dependentIsHolder">
-
-                  <label for="dependentCpf">CPF:</label>
-                  <input type="number" id="dependentCpf" name="dependentCpf" required>
-
-                  <label for="dependentDateOfBirth">Data de Nascimento:</label>
-                  <input type="date" id="dependentDateOfBirth" name="dependentDateOfBirth" required>
-
-                  <label for="dependentPhotoUrl">URL da Foto:</label>
-                  <input type="url" id="dependentPhotoUrl" name="dependentPhotoUrl">
-
-                  <label for="dependentRoom">Número do Quarto:</label>
-                  <input type="number" id="dependentRoom" name="dependentRoom" required>
-
-                  <label for="dependentAccessAreaIds">IDs de Acesso (separados por vírgula):</label>
-                  <input type="text" id="dependentAccessAreaIds" name="dependentAccessAreaIds" placeholder="Ex: 1,2,3" required>
-                </fieldset>
-
-                <!-- Botões de ação -->
-                <div class="modal-buttons">
-                  <button type="submit" id="sendData">Enviar</button>
-                  <button type="button" id="closeDataModal">Cancelar</button>
-                </div>
-              </form>
-            </div>
+  <!-- Modal de Registro -->
+  <div id="mainModal" class="modal">
+      <h2>Registrar Consumo</h2>
+      <form id="consumoForm" >
+          <div class="form-group">
+              <label>Número do Cartão:</label>
+              <input type="number" id="cardNumberes" required>
           </div>
 
-          <a href="cad_prod.html">
-            <div class="card">
-              <h3>Último Consumo →</h3>
-              <img src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.55.41_6c6e8f95.jpg" alt="Cerveja Heineken">
-              <p>Cerveja Heineken - 330 ml</p>
-            </div>
-          </a>
-          <a href="cad_registros.html">
-            <div class="card">
-              <h3>Último Acesso →</h3>
-              <img src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.56.06_f954b042.jpg" alt="Quarto 01">
-              <p>Quarto 01</p>
-            </div>
-          </a>
-          <a href="cad_user.html">
-            <div class="card">
-              <h3>Dependentes →</h3>
-              <img src="../assets/Imagem do WhatsApp de 2025-02-03 à(s) 19.56.34_1602dd4f.jpg" alt="Dependentes">
-              <p>Último Registro</p>
-            </div>
-          </a>
-        </div>
-      </div>
+          <div class="form-group">
+              <label>Produto:</label>
+              <select id="productIde" required>
+                  <option value="">Selecione um produto</option>
+                  <option value="1">Água Mineral</option>
+                  <option value="2">Refrigerante Lata</option>
+                  <option value="3">Suco Natural</option>
+                  <option value="4">Café Expresso</option>
+                  <option value="5">Vinho Suave</option>
+                  <option value="6">Heineken</option>
+                  <option value="7">Sanduiche Natural</option>
+                  <option value="8">Salada Caesar</option>
+                  <option value="9">Prato Executivo (Carne)</option>
+                  <option value="10">Prato Executivo (Frango)</option>
+                  <option value="11">Prato Executivo (Vegetariano)</option>
+                  <option value="12">Sobremesa (Pudim)</option>
+                  <option value="13">Sobremesa (Mousse)</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+              <label>Quantidade:</label>
+              <input type="number" id="quantity" min="1" value="1" required>
+          </div>
+
+          <input type="hidden" id="payment" value="1">
+
+          <button type="submit" onsubmit="handleSubmit(event)">Enviar</button>
+          <button type="button" onclick="closeModals()">Cancelar</button>
+      </form>
+  </div>
+
+  <!-- Modal de Resposta -->
+  <div id="responseModal" class="modal"></div>
+  <div id="overlay" class="overlay"></div>
+
+  <button id="resetCardButton" type="submit" style="background-color: var(--bgloginpage); color: #fff; padding: 20px 40px; border-radius: 20px; cursor:pointer" >teste de reset</button>
+  <button id="openModalDiasble">Desabilita Usuário</button>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2>Digite o Número do Cartão</h2>
+      <!-- Adicionei um formulário para melhor controle -->
+      <form id="cardForm">
+        <input type="text" id="cardNumbere" placeholder="Ex: 12345678"required>
+        <br>
+        <button id="sendButton" type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+
     </div>
   </main>
+  <script src="../js/vincular_card.js"></script>
+  <script src="../js/consumption-create.js"></script>
+  <script src="../js/reset-card.js"></script>
+  <script src="../js/diasble-guest.js"></script>
 </body>
 </html>
