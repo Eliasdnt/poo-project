@@ -99,7 +99,7 @@
     <!-- Script que busca os dados do usuário e preenche a página -->
     <script>
         // Recupera o email armazenado no localStorage ou usa um valor padrão
-        const storedEmail =  'antonio.elias@71aluno.ifce.edu.br';
+        const storedEmail =  localStorage.getItem('userEmail');
         const token = localStorage.getItem("authToken") || "";
         console.log(storedEmail)
 /**
