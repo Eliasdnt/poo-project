@@ -1,39 +1,93 @@
-# HOTEL CARD: Sistema de Gestão de Hóspedes e Acessos
+🎨 **POO PROJECT: Interface Front-End para Gestão de Hóspedes**
 
-## Descrição
+---
 
-O HOTEL CARD é um sistema desenvolvido para gerenciar de forma eficiente os dados de hóspedes, controlar os acessos às áreas do hotel e monitorar o consumo de serviços. O sistema utiliza cartões de acesso para registrar as entradas e saídas dos hóspedes além de registrar consumos, proporcionando maior segurança e controle.
+📖 **Descrição**
 
-**Objetivo:**
+O **POO PROJECT** é a interface front-end do sistema de gestão de hóspedes, permitindo a interação dos usuários com as funcionalidades do sistema. O projeto foi desenvolvido para fornecer uma experiência intuitiva e responsiva, garantindo que os hóspedes e administradores do hotel possam acessar as informações de forma eficiente.
 
-* Centralizar as informações dos hóspedes em um único sistema.
-* Controlar os acessos às áreas restritas do hotel.
-* Monitorar o consumo de serviços pelos hóspedes.
-* Facilitar a geração de relatórios para a gestão do hotel.
+---
 
-**Funcionalidades:**
+🎯 **Objetivo**
 
-* **Cadastro de Hóspedes:** Cadastro completo de hóspedes, incluindo dados pessoais, reservas e informações de contato.
-* **Gerenciamento de Cartões:** Emissão e gerenciamento de cartões de acesso para hóspedes e funcionários.
-* **Controle de Acessos:** Registro automático das entradas e saídas dos hóspedes por meio dos cartões.
-* **Monitoramento de Consumos:** Controle do consumo de serviços como room service, minibar, etc.
-* **Geração de Relatórios:** Criação de relatórios personalizados para análise dos dados do sistema.
+- Criar uma interface amigável e responsiva para a gestão de hóspedes.
+- Facilitar a navegação e o controle de acessos ao sistema.
+- Exibir dados relevantes de forma clara e organizada.
+- Integrar com a API para cadastro, login e controle de acessos.
+
+---
+
+⚡ **Funcionalidades**
+
+- 🏨 **Dashboard Interativo:** Exibição de dados dos hóspedes e acessos.
+- 📋 **Cadastro e Login:** Interface para registro e autenticação de usuários.
+- 🔐 **Acesso Seguro:** Integração com API para autenticação e autorização.
+- 📊 **Relatórios Dinâmicos:** Exibição de consumo e estatísticas dos hóspedes.
+
+---
+
+🛠️ **Tecnologias Utilizadas**
+
+O projeto foi desenvolvido utilizando as seguintes tecnologias:
+
+- **HTML5**
+- **CSS3** 
+- **JavaScript (ES6+)**
 
 
-**Tecnologias Utilizadas:**
+---
 
-* **Front-end:** Js, html5, css, 
-* **Back-end:** c#
-* **Banco de dados:** Mysql
-* **Outras tecnologias:** github, figma e ngrok
+🚀 **Como Rodar o Projeto**
 
+### 🔧 1. Pré-requisitos
 
-## Figma
+Certifique-se de ter instalado:
 
-Enviado no prj3 
- 
-## Modelo Entidade-Relacionamento (MER)
-Enviado no prj4
+- Node.js (versão mais recente recomendada)
+- Gerenciador de pacotes npm ou yarn
+
+### 📥 2. Clonar o Repositório
+
+```sh
+ git clone git@github.com:Eliasdnt/poo-project.git
+ cd poo-project
+```
+
+### 📦 3. Instalar Dependências
+
+```sh
+ npm install  # ou yarn install
+```
+
+### ▶️ 4. Executar o Projeto
+
+```sh
+ npm start  # ou yarn start
+```
+
+A aplicação estará disponível no navegador em:
+
+[https://eliasdnt.github.io/poo-project/](https://eliasdnt.github.io/poo-project/)
+
+---
+
+🤝 **Contribuindo**
+
+Se deseja contribuir com o projeto:
+
+1. Faça um fork do repositório
+2. Crie uma branch (`git checkout -b minha-feature`)
+3. Faça as alterações necessárias
+4. Faça commit das mudanças (`git commit -m 'Minha nova feature'`)
+5. Envie um push para a branch (`git push origin minha-feature`)
+6. Abra um **Pull Request**
+
+---
+
+📄 **Licença**
+
+Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e contribuir! 🎉
+
 
 
 
