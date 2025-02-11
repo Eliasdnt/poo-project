@@ -5,7 +5,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 90%;
     margin: 20px auto;
-    margin-top: 0px;
+    margin-top: 150px;
 
     
 }
@@ -33,11 +33,4 @@ tr{
     display: flex;
     justify-content: space-between;
     background-color: #f0f0f0;
-}
-
-@media (max-width: 1500px) {
-    .container{
-        /* margin-top: -350px; */
-    }
-    
 }
