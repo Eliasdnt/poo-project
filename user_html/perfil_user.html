@@ -1,61 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       
-        <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml">
-    <meta name="theme-color" content="#0B1231">
-
-    
-</head>
-
-<body>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#0B1231" />
+    <!-- <title>Perfil do Usuário</title> -->
+  </head>
+  <body>
     <main>
-        <div class="grid-main">
-            <div class="menu-main-user">
-                <img id="logotype" src="../assets/logo_svg.svg" alt="logotype">
-                <nav>
-                    <ul>
-                        <li><a href="home_user.html"><img src="../assets/home.svg" alt="">Home</a></li>
-                        <li><a href="reg_compra_user.html"><img src="../assets/registro.svg" alt="">Registro de Compras</a></li>
-                        <li><a href="perfil_user.html"><img src="../assets/perfil.svg" alt=""> Perfil</a></li>
-                        <li><a href="dependentes_user.html"><img src="../assets/acessos.svg" alt=""> Acessos</a></li>
-                    </ul>
-                </nav>
+      <div class="grid-main">
+        <div class="menu-main-user">
+          <img id="logotype" src="../assets/logo_svg.svg" alt="logotype" />
+          <nav>
+            <ul>
+              <li>
+                <a href="home_user.html"
+                  ><img src="../assets/home.svg" alt="" />Home</a
+                >
+              </li>
+              <li>
+                <a href="reg_compra_user.html"
+                  ><img src="../assets/registro.svg" alt="" />Registro de
+                  Compras</a
+                >
+              </li>
+              <li>
+                <a href="perfil_user.html"
+                  ><img src="../assets/perfil.svg" alt="" /> Perfil</a
+                >
+              </li>
+              <li>
+                <a href="dependentes_user.html"
+                  ><img src="../assets/acessos.svg" alt="" /> Acessos</a
+                >
+              </li>
+            </ul>
+          </nav>
 
-                <div class="user-informs"> <div><img id="user" src="../assets/logo_svg.svg" alt="">
-                    <div class="grid-user-informs">  <h4 id="username">Username</h4>
-                        <span style="font-size: 9px;" id="useremail">username.email</span></div></div>
-                    <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
-                </div>
-
-
+          <div class="user-informs">
+            <div>
+              <img id="user" src="../assets/logo_svg.svg" alt="" />
+              <div class="grid-user-informs">
+                <h4 id="username">Username</h4>
+                <span style="font-size: 9px;" id="useremail">username.email</span>
+              </div>
             </div>
-            <div class="main-user-side-rigth">
-                <div class="header">
-                    <h2>Perfil</h2>
-                   
-                </div>
-                <div class="container-perfil">
-                   <div class="image-container"> <img id="profile-img-perfil" height="292px" src="../assets/logo_svg.svg" alt="Foto de Perfil" ></div>
-                    <div class="info">
-                        <p><strong>Nome Completo:</strong> <span id="nome"></span></p>
-                        <p><strong>Data de Nascimento:</strong> <span id="data-nascimento"></span></p>
-                        <p><strong>Email:</strong> <span id="email"></span></p>
-                        <p><strong>Endereço:</strong> <span id="endereco"></span></p>
-                        <p><strong>Telefone:</strong> <span id="cellphone"></span></p>
-                        <p><strong>Titular: </strong> <span id="titular"></span></p>
-                       
-                    </div>
-                </div>
+            <h6>₢ 2025 - HOTEL CARD / ELJJ SOLUTIONS</h6>
+          </div>
         </div>
-    </div>
-</main>
 
-</body>
-<script src="../js/username.js"></script>
+        <div class="main-user-side-rigth">
+          <div class="header">
+            <h2>Perfil</h2>
+          </div>
+          <div class="container-perfil">
+            <div class="image-container">
+              <!-- A imagem de perfil será atualizada via JS, se disponível -->
+              <img
+                id="profile-img-perfil"
+                height="292px"
+                src="../assets/logo_svg.svg"
+                alt="Foto de Perfil"
+              />
+            </div>
+            <div class="info">
+              <p>
+                <strong>Nome Completo:</strong>
+                <span id="nome"></span>
+              </p>
+              <p>
+                <strong>Data de Nascimento:</strong>
+                <span id="data-nascimento"></span>
+              </p>
+              <p>
+                <strong>Email:</strong>
+                <span id="email"></span>
+              </p>
+              <p>
+                <strong>Endereço:</strong>
+                <span id="endereco"></span>
+              </p>
+              <p>
+                <strong>Telefone:</strong>
+                <span id="cellphone"></span>
+              </p>
+              <p>
+                <strong>Titular:</strong>
+                <span id="titular"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Script que busca os dados do usuário e preenche a página -->
+    <script>
+        // Recupera o email armazenado no localStorage ou usa um valor padrão
+        const storedEmail =  'antonio.elias@71aluno.ifce.edu.br';
+        const token = localStorage.getItem("authToken") || "";
+        console.log(storedEmail)
+/**
+ * Faz uma requisição GET para a API, enviando o email na query string.
+ * A API deverá retornar os dados do usuário em formato JSON.
+ *
+ * @param {string} email - O email do usuário.
+ */
+       
+
+  fetch(`https://24cb-190-89-153-9.ngrok-free.app/guest/get-guest-by-email?email=${encodeURIComponent(storedEmail)}`, {
+    method: "GET",
+    headers: {
+        "accept": '*/*',
+      "Authorization": `Bearer ${token}`,
+       "Cache-Control": "no-cache",
+      "Content-Type": "application/json",    
+      "ngrok-skip-browser-warning": "6024"
+    }
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Erro na resposta da API");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      populateUserInfo(data);
+    })
+    .catch((error) => {
+      console.error("Erro ao buscar os dados do usuário:", error);
+    });
+
+
+/**
+ * Atualiza os elementos HTML com os dados retornados da API.
+ *
+ * @param {Object} data - Objeto contendo os dados do usuário.
+ */
+function populateUserInfo(data) {
+  document.getElementById("nome").textContent = data.name;
+
+  // Converte a data de nascimento para o formato dd/mm/yyyy
+  const date = new Date(data.dateOfBirth);
+  document.getElementById("data-nascimento").textContent = date.toLocaleDateString("pt-BR");
+
+  document.getElementById("email").textContent = data.email;
+  document.getElementById("endereco").textContent = data.address;
+  document.getElementById("cellphone").textContent = data.cellPhone;
+
+  // Exibe "Sim" se for titular, ou "Não" caso contrário
+  document.getElementById("titular").textContent = data.isHolder ? "Sim" : "Não";
+
+  // Atualiza a imagem de perfil, se disponível
+  if (data.photoUrl) {
+    document.getElementById("profile-img-perfil").src = data.photoUrl;
+  }
+}
+
+// Se houver email armazenado, busca os dados do usuário
+
+    </script>
+
+    <!-- Scripts adicionais -->
+    <script src="../js/username.js"></script>
+   
+  </body>
 </html>

@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Função que envia os dados para o servidor via fetch
 async function sendData(formData) {
   try {
-    const response = await fetch('https://f8b3-177-14-232-8.ngrok-free.app/consumption/create-consumption', {
+    const response = await fetch('https://24cb-190-89-153-9.ngrok-free.app/consumption/create-consumption', {
       method: 'POST',
       headers: {
         // Caso a variável "token" esteja definida, adiciona o header de autorização

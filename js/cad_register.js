@@ -1,5 +1,5 @@
 async function fetchAndDisplayGuests() {
-    const url = 'https://f8b3-177-14-232-8.ngrok-free.app/guestflow/get-guest'; // Substitua pela URL correta da API
+    const url = 'https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest'; // Substitua pela URL correta da API
     const token = localStorage.getItem('authToken');
 
     try {
