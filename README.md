@@ -1,10 +1,10 @@
-🎨 **POO PROJECT: Interface Front-End para Gestão de Hóspedes**
+🎨 **HOTEL CARD: Interface Front-End para Gestão de Hóspedes**
 
 ---
 
 📖 **Descrição**
 
-O **POO PROJECT** é a interface front-end do sistema de gestão de hóspedes, permitindo a interação dos usuários com as funcionalidades do sistema. O projeto foi desenvolvido para fornecer uma experiência intuitiva e responsiva, garantindo que os hóspedes e administradores do hotel possam acessar as informações de forma eficiente.
+O **HOTEL CARD** é a interface front-end do sistema de gestão de hóspedes, permitindo a interação dos usuários com as funcionalidades do sistema. O projeto foi desenvolvido para fornecer uma experiência intuitiva e responsiva, garantindo que os hóspedes e administradores do hotel possam acessar as informações de forma eficiente.
 
 ---
 
