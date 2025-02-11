@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="icon" href="../assets/logo_svg.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#0B1231" />
-    <!-- <title>Perfil do Usuário</title> -->
   </head>
   <body>
     <main>
@@ -96,18 +95,11 @@
       </div>
     </main>
 
-    <!-- Script que busca os dados do usuário e preenche a página -->
     <script>
-        // Recupera o email armazenado no localStorage ou usa um valor padrão
         const storedEmail =  localStorage.getItem('userEmail');
         const token = localStorage.getItem("authToken") || "";
         console.log(storedEmail)
-/**
- * Faz uma requisição GET para a API, enviando o email na query string.
- * A API deverá retornar os dados do usuário em formato JSON.
- *
- * @param {string} email - O email do usuário.
- */
+
        
 
   fetch(`https://24cb-190-89-153-9.ngrok-free.app/guest/get-guest-by-email?email=${encodeURIComponent(storedEmail)}`, {
@@ -134,15 +126,10 @@
     });
 
 
-/**
- * Atualiza os elementos HTML com os dados retornados da API.
- *
- * @param {Object} data - Objeto contendo os dados do usuário.
- */
+
 function populateUserInfo(data) {
   document.getElementById("nome").textContent = data.name;
 
-  // Converte a data de nascimento para o formato dd/mm/yyyy
   const date = new Date(data.dateOfBirth);
   document.getElementById("data-nascimento").textContent = date.toLocaleDateString("pt-BR");
 
@@ -150,16 +137,13 @@ function populateUserInfo(data) {
   document.getElementById("endereco").textContent = data.address;
   document.getElementById("cellphone").textContent = data.cellPhone;
 
-  // Exibe "Sim" se for titular, ou "Não" caso contrário
   document.getElementById("titular").textContent = data.isHolder ? "Sim" : "Não";
 
-  // Atualiza a imagem de perfil, se disponível
   if (data.photoUrl) {
     document.getElementById("profile-img-perfil").src = data.photoUrl;
   }
 }
 
-// Se houver email armazenado, busca os dados do usuário
 
     </script>
 

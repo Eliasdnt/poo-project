@@ -5,32 +5,27 @@ function openModal() {
   document.getElementById('overlay').style.display = 'block';
 }
 
-// function closeModals() {
-//   document.getElementById('mainModal').style.display = 'none';
-//   document.getElementById('overlay').style.display = 'none';
-// }
 
-// Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', () => {
-  // Obtém o formulário pela ID
+ 
   const form = document.getElementById('consumoForm');
 
-  // Adiciona um listener para o evento de submit do formulário
+  
   form.addEventListener('submit', async (event) => {
-    event.preventDefault(); // Impede o comportamento padrão de recarregar a página
+    event.preventDefault(); 
 
-    // Recupera os valores dos inputs
+    
     const cardNumberValue = document.getElementById('cardNumberes').value;
     const productIdValue = document.getElementById('productIde').value;
     const quantityValue = document.getElementById('quantity').value;
 
-    // Validação simples para verificar se os valores são numéricos
+    
     if (isNaN(cardNumberValue) || isNaN(productIdValue) || isNaN(quantityValue)) {
       alert('Valores inválidos. Certifique-se de inserir números válidos.');
       return;
     }
 
-    // Cria o objeto conforme o formato esperado pelo servidor
+  
     const formData = {
       cardNumber: cardNumberValue,
       products: [
@@ -44,9 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       console.log('Enviando dados:', JSON.stringify(formData));
-      // Envia os dados para o servidor
+   
       const response = await sendData(formData);
-      // Exibe o modal com a resposta
+      
       showResponseModal(formData);
     } catch (error) {
       console.error('Erro ao enviar dados:', error);
@@ -55,13 +50,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Função que envia os dados para o servidor via fetch
+
 async function sendData(formData) {
   try {
     const response = await fetch('https://24cb-190-89-153-9.ngrok-free.app/consumption/create-consumption', {
       method: 'POST',
       headers: {
-        // Caso a variável "token" esteja definida, adiciona o header de autorização
+        
         'Authorization': token ? `Bearer ${token}` : '',
         'Content-Type': 'application/json',
         'ngrok-skip-browser-warning': '6024'
@@ -85,24 +80,7 @@ async function sendData(formData) {
   }
 }
 
-// // Função para exibir os dados enviados em um modal
-// function showResponseModal(data) {
-//   const modal = document.getElementById('responseModal');
-//   const product = data.products[0];
-//   // Obtém o nome do produto a partir do select (assumindo que o select tenha id "productId")
-//   const productSelect = document.getElementById('productId');
-//   const productName = productSelect.options[productSelect.selectedIndex].text;
 
-//   modal.innerHTML = `
-//     <h2>Registro Enviado</h2>
-//     <p><strong>Cartão:</strong> ${data.cardNumber}</p>
-//     <p><strong>Produto:</strong> ${productName} (ID: ${product.productId})</p>
-//     <p><strong>Quantidade:</strong> ${product.quantity}</p>
-//     <p><strong>Pagamento:</strong> Cartão de Crédito</p>
-//     <button onclick="closeModals()">Fechar</button>
-//   `;
-//   modal.style.display = 'block';
-// }
 
 document.addEventListener("DOMContentLoaded", () => {
   const cancelarButton = document.getElementById("cancelarButton");

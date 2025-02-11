@@ -10,12 +10,12 @@ document.getElementById("employeeForm").addEventListener("submit", async functio
         name: name,
         email: email,
         password: password,
-        role: parseInt(role) // Convertendo para inteiro
+        role: parseInt(role)
     };
   
     const queryString = `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&role=${encodeURIComponent(parseInt(role))}`;
   
-    // Concatena a URL base com a query string
+
     const url = `https://24cb-190-89-153-9.ngrok-free.app/employee/add-employee${queryString}`;
     try {
         const response = await fetch(url, {

@@ -1,4 +1,4 @@
-// Função para buscar consumo por CPF
+
 async function fetchConsumptionByCPF(cpf) {
     const url = `https://24cb-190-89-153-9.ngrok-free.app/consumption/get-consumption-by-guest?cpf=${cpf}`;
     const token = localStorage.getItem('authToken');
@@ -26,12 +26,12 @@ async function fetchConsumptionByCPF(cpf) {
     }
 }
 
-// Função para exibir os dados na tabela
+
 async function fetchAndDisplayConsumption(cpf) {
     try {
         const guestData = await fetchConsumptionByCPF(cpf);
 
-        // Mapeamento de IDs para nomes de produtos
+       
         const productMap = {
             1: 'Água Mineral',
             2: 'Refrigerante Lata',
@@ -48,11 +48,9 @@ async function fetchAndDisplayConsumption(cpf) {
             13: 'Sobremesa (Mousse de Chocolate)'
         };
 
-        // Seleciona o corpo da tabela
+       
         const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
-
-        // Percorre os dados e cria linhas na tabela
+        tableBody.innerHTML = ''; 
         guestData.forEach(guest => {
             guest.products.forEach(product => {
                 const row = document.createElement('tr');
@@ -72,13 +70,13 @@ async function fetchAndDisplayConsumption(cpf) {
     }
 }
 
-// Função para formatar a data no formato DD/MM/AAAA HH:MM
+
 function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
 }
 
-// Lógica para abrir o modal e buscar os dados
+
 document.getElementById('openModalButton').addEventListener('click', () => {
     const modal = document.getElementById('cpfModal');
     modal.style.display = 'block';
@@ -92,7 +90,7 @@ document.getElementById('searchButton').addEventListener('click', () => {
     }
 
     const modal = document.getElementById('cpfModal');
-    modal.style.display = 'none'; // Fecha o modal
+    modal.style.display = 'none'; 
 
-    fetchAndDisplayConsumption(cpf); // Busca e exibe os dados
+    fetchAndDisplayConsumption(cpf); 
 });

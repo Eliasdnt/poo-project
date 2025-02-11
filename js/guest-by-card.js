@@ -8,9 +8,9 @@ function closeGuestModal() {
     document.getElementById('overlay').style.display = 'none';
 }
 
-// Evento para capturar o envio do formulário
+
 document.getElementById('guestForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evita o recarregamento da página
+    event.preventDefault(); 
 
     const cardNumber = document.getElementById('cardInput').value.trim();
     if (cardNumber === "") {
@@ -21,7 +21,7 @@ document.getElementById('guestForm').addEventListener('submit', async function(e
     await fetchAndDisplayGuests(cardNumber);
 });
 
-// Função para buscar hóspedes por número do cartão
+
 async function fetchGuestsByCard(cardNumber) {
     const url = `https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest-by-card?card=${cardNumber}`;
     const token = localStorage.getItem('authToken');
@@ -49,14 +49,12 @@ async function fetchGuestsByCard(cardNumber) {
     }
 }
 
-// Função para exibir os dados na tabela
+
 async function fetchAndDisplayGuests(cardNumber) {
     try {
         const guestData = await fetchGuestsByCard(cardNumber);
         const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = ''; // Limpa os dados anteriores
-
-        // Apenas preenche a tabela com os dados retornados pela API
+        tableBody.innerHTML = ''; 
         guestData.forEach(guest => {
             const row = document.createElement('tr');
             row.innerHTML = `

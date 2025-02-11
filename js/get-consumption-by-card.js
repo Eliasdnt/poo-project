@@ -8,9 +8,9 @@ function closeModals() {
     document.getElementById('overlay').style.display = 'none';
 }
 
-// Evento para capturar envio do formulário
+
 document.getElementById('cardForm').addEventListener('submit', async function(event) {
-    event.preventDefault(); // Evita o recarregamento da página
+    event.preventDefault(); 
 
     const cardNumber = document.getElementById('cardInput').value.trim();
     if (cardNumber === "") {
@@ -21,7 +21,7 @@ document.getElementById('cardForm').addEventListener('submit', async function(ev
     await fetchAndDisplayConsumption(cardNumber);
 });
 
-// Função para buscar consumo por número do cartão
+
 async function fetchConsumptionByCard(cardNumber) {
     const url = `https://24cb-190-89-153-9.ngrok-free.app/consumption/get-consumption-by-card?card=${cardNumber}`;
     const token = localStorage.getItem('authToken');
@@ -49,7 +49,6 @@ async function fetchConsumptionByCard(cardNumber) {
     }
 }
 
-// Função para exibir os dados na tabela
 async function fetchAndDisplayConsumption(cardNumber) {
     try {
         const consumptionData = await fetchConsumptionByCard(cardNumber);
@@ -97,7 +96,7 @@ async function fetchAndDisplayConsumption(cardNumber) {
     }
 }
 
-// Função de formatação de data
+
 function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleString('pt-BR', { 

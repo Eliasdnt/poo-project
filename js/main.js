@@ -31,9 +31,7 @@ if (loginForm) {
         throw new Error("Erro ao fazer login. Verifique suas credenciais.");
       }
 
-      const data = await response.json(); // Recebe a resposta com nome, email e token
-
-      // Armazena os dados no localStorage para persistência
+      const data = await response.json(); 
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userName", data.name);
       localStorage.setItem("userEmail", data.email);
@@ -99,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              'ngrok-skip-browser-warning': '6024' // Removed Authorization header
+              'ngrok-skip-browser-warning': '6024' 
             },
             body: JSON.stringify({ email })
           });

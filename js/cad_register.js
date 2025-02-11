@@ -1,5 +1,5 @@
 async function fetchAndDisplayGuests() {
-    const url = 'https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest'; // Substitua pela URL correta da API
+    const url = 'https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest'; 
     const token = localStorage.getItem('authToken');
 
     try {
@@ -20,9 +20,7 @@ async function fetchAndDisplayGuests() {
 
         // Seleciona o corpo da tabela
         const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
-
-        // Percorre os dados e cria linhas na tabela
+        tableBody.innerHTML = ''; 
         data.forEach(guest => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -37,5 +35,5 @@ async function fetchAndDisplayGuests() {
     }
 }
 
-// Chama a função para carregar os dados assim que a página for carregada
+
 document.addEventListener('DOMContentLoaded', fetchAndDisplayGuests);

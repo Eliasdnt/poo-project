@@ -1,5 +1,5 @@
 async function fetchAndDisplayConsumption() {
-    const url = 'hhttps://24cb-190-89-153-9.ngrok-free.app/consumption/get-all'; // Substitua pela URL correta da API
+    const url = 'hhttps://24cb-190-89-153-9.ngrok-free.app/consumption/get-all';
     const token = localStorage.getItem('authToken');
 
     // Mapeamento de IDs para nomes de produtos
@@ -37,9 +37,7 @@ async function fetchAndDisplayConsumption() {
 
         // Seleciona o corpo da tabela
         const tableBody = document.getElementById('table-body');
-        tableBody.innerHTML = ''; // Limpa a tabela antes de adicionar novos dados
-
-        // Percorre os dados e cria linhas na tabela
+        tableBody.innerHTML = ''; 
         data.forEach(consumption => {
             consumption.products.forEach(product => {
                 const row = document.createElement('tr');
@@ -58,11 +56,11 @@ async function fetchAndDisplayConsumption() {
     }
 }
 
-// Função para formatar a data no formato DD/MM/AAAA HH:MM
+
 function formatDate(dateString) {
     const date = new Date(dateString);
     return date.toLocaleString('pt-BR', { dateStyle: 'short', timeStyle: 'short' });
 }
 
-// Chama a função para carregar os dados assim que a página for carregada
+
 document.addEventListener('DOMContentLoaded', fetchAndDisplayConsumption);

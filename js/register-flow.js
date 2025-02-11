@@ -3,44 +3,35 @@ function openModal() {
     document.getElementById('overlay').style.display = 'block';
   }
 
-  // Fecha todos os modais e o overlay
+  
   function closeModals() {
     document.querySelectorAll('.modal').forEach(modal => modal.style.display = 'none');
     document.getElementById('overlay').style.display = 'none';
   }
 
-  // Recupera o token de autenticação do localStorage (garanta que ele esteja salvo com a chave 'authToken')
   const token = localStorage.getItem('authToken');
 
-  // Função executada ao submeter o formulário de acesso
   async function handleSubmit(event) {
     event.preventDefault();
 
-    // Opcional: esconde o modal de registro para evitar duplo envio
     document.getElementById('mainModal').style.display = 'none';
 
-    // Prepara os dados do formulário
     const formData = {
       cardOfNumber: parseInt(document.getElementById('cardOfNumber').value),
       accessAreaId: parseInt(document.getElementById('accessAreaId').value)
     };
 
     try {
-      // Envia os dados para a API e aguarda a resposta
       const responseData = await sendData(formData);
-      // Exibe o modal de resposta com os dados retornados
       showResponseModal(responseData, formData);
-      // Opcional: limpa o formulário para nova submissão
       document.getElementById('acessoForm').reset();
     } catch (error) {
       console.error('Erro:', error);
       alert('Erro ao enviar dados: ' + error.message);
-      // Em caso de erro, reabre o modal de registro para nova tentativa
       openModal();
     }
   }
 
-  // Função para enviar os dados via fetch para a API
   async function sendData(formData) {
     try {
       const response = await fetch('https://24cb-190-89-153-9.ngrok-free.app/guestflow/register-flow', {
@@ -66,7 +57,6 @@ function openModal() {
     }
   }
 
-  // Exibe o modal de resposta com os dados retornados pela API (caso a API não retorne os mesmos dados, os dados enviados pelo formulário são usados como fallback)
   function showResponseModal(apiResponse, formData) {
     const modal = document.getElementById('responseModal');
     const areaSelect = document.getElementById('accessAreaId');
