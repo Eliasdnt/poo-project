@@ -19,7 +19,7 @@ if (loginForm) {
     const requestBody = { email, password };
     localStorage.setItem("authToken", '');
     try {
-      const response = await fetch("https://24cb-190-89-153-9.ngrok-free.app/auth/login", {
+      const response = await fetch("https://fcd1-190-89-153-9.ngrok-free.app/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json",
           'ngrok-skip-browser-warning': '6024'
@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return;
         }
         try {
-          const response = await fetch("https://24cb-190-89-153-9.ngrok-free.app/auth/forgot-password", {
+          const response = await fetch("https://fcd1-190-89-153-9.ngrok-free.app/auth/forgot-password", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

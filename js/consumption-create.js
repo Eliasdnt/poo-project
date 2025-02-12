@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function sendData(formData) {
   try {
-    const response = await fetch('https://24cb-190-89-153-9.ngrok-free.app/consumption/create-consumption', {
+    const response = await fetch('https://fcd1-190-89-153-9.ngrok-free.app/consumption/create-consumption', {
       method: 'POST',
       headers: {
         

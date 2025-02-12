@@ -1,5 +1,5 @@
 async function fetchAndDisplayConsumption() {
-    const url = 'hhttps://24cb-190-89-153-9.ngrok-free.app/consumption/get-all';
+    const url = 'https://fcd1-190-89-153-9.ngrok-free.app/consumption/get-all';
     const token = localStorage.getItem('authToken');
 
     // Mapeamento de IDs para nomes de produtos

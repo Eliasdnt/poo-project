@@ -8,7 +8,7 @@ const storedEmail = localStorage.getItem('userEmail');
  */
 function fetchUserData(email) {
   
-  const apiUrl = `https://24cb-190-89-153-9.ngrok-free.app/guest/get-guest-by-email?email=${encodeURIComponent(email)}`;
+  const apiUrl = `https://fcd1-190-89-153-9.ngrok-free.app/guest/get-guest-by-email?email=${encodeURIComponent(email)}`;
 
   fetch(apiUrl)
     .then(response => {

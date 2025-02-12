@@ -34,7 +34,7 @@ function openModal() {
 
   async function sendData(formData) {
     try {
-      const response = await fetch('https://24cb-190-89-153-9.ngrok-free.app/guestflow/register-flow', {
+      const response = await fetch('https://fcd1-190-89-153-9.ngrok-free.app/guestflow/register-flow', {
         method: 'POST',
         headers: {
           'Authorization': token ? `Bearer ${token}` : '',

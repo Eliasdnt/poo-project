@@ -1,5 +1,5 @@
 async function fetchConsumptionByCPF(cpf) {
-    const url = `https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest-by-cpf?cpf=${cpf}`;
+    const url = `https://fcd1-190-89-153-9.ngrok-free.app/guestflow/get-guest-by-cpf?cpf=${cpf}`;
     const token = localStorage.getItem('authToken');
 
     try {

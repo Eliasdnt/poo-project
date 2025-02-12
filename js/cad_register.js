@@ -1,5 +1,5 @@
 async function fetchAndDisplayGuests() {
-    const url = 'https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest'; 
+    const url = 'https://fcd1-190-89-153-9.ngrok-free.app/guestflow/get-guest'; 
     const token = localStorage.getItem('authToken');
 
     try {

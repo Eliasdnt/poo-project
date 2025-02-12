@@ -16,7 +16,7 @@ document.getElementById("employeeForm").addEventListener("submit", async functio
     const queryString = `?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}&role=${encodeURIComponent(parseInt(role))}`;
   
 
-    const url = `https://24cb-190-89-153-9.ngrok-free.app/employee/add-employee${queryString}`;
+    const url = `https://fcd1-190-89-153-9.ngrok-free.app/employee/add-employee${queryString}`;
     try {
         const response = await fetch(url, {
             method: "POST",

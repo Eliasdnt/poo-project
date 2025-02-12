@@ -23,7 +23,7 @@ document.getElementById('guestForm').addEventListener('submit', async function(e
 
 
 async function fetchGuestsByCard(cardNumber) {
-    const url = `https://24cb-190-89-153-9.ngrok-free.app/guestflow/get-guest-by-card?card=${cardNumber}`;
+    const url = `https://fcd1-190-89-153-9.ngrok-free.app/guestflow/get-guest-by-card?card=${cardNumber}`;
     const token = localStorage.getItem('authToken');
 
     try {

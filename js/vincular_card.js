@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const payload = { cpf: cpf, cardOfNumber: cardOfNumber };
         console.log("Payload enviado:", payload);
 
-        fetch("https://24cb-190-89-153-9.ngrok-free.app/register-card", {
+        fetch("https://fcd1-190-89-153-9.ngrok-free.app/register-card", {
             method: "POST",
             headers: { 
                 'Authorization': `Bearer ${token}`,

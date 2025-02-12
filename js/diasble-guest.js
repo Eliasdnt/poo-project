@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       sendButton.textContent = "Enviando...";
 
       
-      const url = "https://24cb-190-89-153-9.ngrok-free.app/guest/disable-guest";
+      const url = "https://fcd1-190-89-153-9.ngrok-free.app/guest/disable-guest";
       const response = await fetch(url, {
         method: "PATCH",
         headers: {
